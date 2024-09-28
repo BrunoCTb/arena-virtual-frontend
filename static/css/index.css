@@ -124,10 +124,10 @@ main {
 }
 
 .features > div {
+    background: linear-gradient(0deg, #22c1c3 0%, #fdbb2d 62%);     padding: 60px;
     width: calc(70% - 120px);
     height: calc(70% - 120px);
     box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.258);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 62%);     padding: 60px;
     border-radius: 10px;
 }
 
@@ -156,4 +156,93 @@ main {
 .features > div .all-features > .feat .feat-info p{
     font-size: 11pt;
     color: #00000082;
+}
+
+
+/* CAMPEONATOS EM ANDAMENTO */
+.running-tournaments {
+    /* background-color: yellow; */
+    
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.running-tournaments > div {
+    /* background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 62%);     padding: 60px; */
+    color: #fff;
+    width: calc(70% - 120px);
+    height: calc(70% - 120px);
+}
+
+.running-tournaments-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.running-tournaments-title .carousel-control span{
+    background-color: #3030bf;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.running-tournaments-title .carousel-control span:hover{
+    background-color: #202093;
+}
+
+
+.running-tournaments-title h2{
+    font-size: 25pt;
+    margin-bottom: 35px;
+}
+
+.running-tournaments > div .tournament-carousel {
+    /* background-color: rebeccapurple; */
+    width: 100%;
+    display: flex;
+    gap: 2.5%;
+}
+
+.running-tournaments > div .tournament-carousel .tournament {
+    /* background: linear-gradient(90deg, #020024 5%, #090979 38%, #00d4ff 100%); */
+    background-color: #3030bf;
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.258);
+    border-radius: 10px;
+    padding: 20px;
+    /* background-color: red; */
+    width: 25%;
+    height: 400px;
+}
+
+.running-tournaments > div .tournament-carousel .tournament  .tournament-image {
+    background-color: #fdbb2d;
+    width: 100%;
+    height: 25%;
+    margin-bottom: 30px;
+}
+
+.running-tournaments > div .tournament-carousel .tournament  .tournament-info {
+    /* background-color: greenyellow; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link-to-tournament {
+    background-color: #fdbb2d;
+    color: #fff;
+    width: calc(60% - 20px);
+    align-self: center;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.link-to-tournament:hover {
+    background-color: #dfa528;
 }
