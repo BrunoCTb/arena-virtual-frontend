@@ -17,7 +17,7 @@ const NAV_BAR_CONTENT = `
         </ul>
         
         <ul class="auth-header">
-            <a href="#"><li>Login</li></a>
+            <a href="/pages/login.html"><li>Login</li></a>
             <a href="/pages/register.html"><li>Cadastro</li></a>
         </ul>
     </header>

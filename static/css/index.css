@@ -162,7 +162,7 @@ main {
 /* CAMPEONATOS EM ANDAMENTO */
 .running-tournaments {
     /* background-color: yellow; */
-    
+
     height: 90vh;
     display: flex;
     justify-content: center;
@@ -182,8 +182,13 @@ main {
     align-items: center;
 }
 
+.running-tournaments-title h2 {
+    color: #000;
+}
+
 .running-tournaments-title .carousel-control span{
     background-color: #3030bf;
+    color: #fff;
     padding: 10px;
     cursor: pointer;
 }

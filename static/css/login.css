@@ -1,0 +1,92 @@
+main {
+    height: 90vh;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+.login-card {
+    background: linear-gradient(11deg, #020024 0%, #2c2cb6 44%, #00d4ff 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(40% - 10%);
+    border-radius: 12px;
+    box-shadow: 3px 1px 3px 0 #594f4f;
+    padding: 5%;
+    font-family: 'Fredoka';
+}
+
+.login-card .login-title h1 {
+    font-size: 35pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.login-card #login-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-card #login-form .entry {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-card #login-form .entry input{
+    width: calc(100% - 30px);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    outline: none;
+}
+
+.login-card #login-form .remember-me {
+    align-self: baseline;
+    justify-content: center;
+}
+
+.login-card #login-form .remember-me input{
+    cursor: pointer;
+}
+
+.login-card #login-form .submit {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.login-card #login-form .submit input{
+    background-color: #fff;
+    color: #000;
+    width: calc(100%);
+    padding: 10px;
+    font-weight: bold;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+.login-card #login-form .submit input:hover {
+    background-color: #ffffffc5;
+}
+
+.login-card #login-form .others {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.login-card #login-form .others a{
+    color: #fff;
+}
+
+.login-card #login-form .others a:hover {
+    color: #ffffffb8;
+}
