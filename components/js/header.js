@@ -5,7 +5,7 @@ const NAV_BAR_CONTENT = `
         </div>
 
         <ul class="project-header-links">
-            <a href="#"><li>Início</li></a>
+            <a href="/pages/index.html"><li>Início</li></a>
             <a href="#"><li>Projeto</li></a>
             <a href="#"><li>Sobre</li></a>
         </ul>
@@ -18,7 +18,7 @@ const NAV_BAR_CONTENT = `
         
         <ul class="auth-header">
             <a href="#"><li>Login</li></a>
-            <a href="#"><li>Cadastro</li></a>
+            <a href="/pages/register.html"><li>Cadastro</li></a>
         </ul>
     </header>
 ` 
