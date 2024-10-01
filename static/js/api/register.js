@@ -1,7 +1,8 @@
 const api_url = "http://localhost:8080/user/register";
 
 document.getElementById("register-form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Evita o reload da página
+    // evitar o reload da página
+    event.preventDefault();
 
     let username = document.getElementById("username").value;
     let firstName = document.getElementById("firstName").value;
