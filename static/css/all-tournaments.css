@@ -1,17 +1,16 @@
 main {
-    /* background-color: yellow; */
     height: 90vh;
     display: flex;
     font-family: 'Fredoka';
 }
 
 .filter-tournaments {
-    /* background-color: red; */
     width: calc(15% - 100px);
     display: flex;
     flex-direction: column;
     gap: 25px;
     padding: 50px 50px;
+    border-right: 1px solid #000;
 }
 
 .filter-div-line {
@@ -21,7 +20,6 @@ main {
 .filter-tournaments .filter-online-mode-inputs {
     display: flex;
     margin-top: 20px;
-    /* background-color: blueviolet; */
 }
 
 .filter-tournaments .filter-online-mode > div {
@@ -85,8 +83,94 @@ main {
 
 /* CONTENT */
 .content {
-    background-color: aqua;
-    width: 80%;
+    width: 100%;
 }
+
+/* ============= */
+.content img {
+    width: 20px;
+}
+/* ============= */
+
+.search-config {
+    height: 10vh;
+    display: flex;
+    border-bottom: 1px solid #000;
+}
+
+/* open/close filter nav */
+.search-config .close-filter {
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.search-config .close-filter img {
+    width: 20px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* each filter */
+.search-config .filters-applied {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    padding-left: 3%;
+}
+
+.search-config .filters-applied > span {
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+/* search */
+.search-config .search-tournament{
+    width: 40%;
+}
+
+.search-config .search-tournament .search-input {
+    height: 100%;
+    position: relative;
+}
+
+.search-config .search-tournament .search-input input {
+    width: calc(60% - 24px);
+    position: absolute;
+    top: 25%;
+    left: calc(5%);
+    padding: 12px;
+    padding-left: 50px;
+    outline: none;
+}
+
+.search-config .search-tournament img {
+    width: 3%;
+    top: calc(50% - 10%);
+    left: 8%;
+    position: absolute;
+}
+
+.search-config .sort {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 5%;
+}
+
+.search-config .sort img {
+    width: 20px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/* sort tournaments */
 
 
