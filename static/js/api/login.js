@@ -12,9 +12,6 @@ document.getElementById("login-form").addEventListener("submit", async function 
         "password": password,
     });
 
-    console.log(bodyData);
-    
-    
     try {
         const responseApi = await fetch(api_url, {
             headers: {
@@ -38,5 +35,4 @@ document.getElementById("login-form").addEventListener("submit", async function 
     } catch (error) {
         console.log("erro | ", error);
     }
-
 });
