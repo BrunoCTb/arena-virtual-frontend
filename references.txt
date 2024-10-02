@@ -1,0 +1,9 @@
+====== Referências de layout ======
+
+- Página Home
+    * referência "completa" do trello: https://trello.com/pt-BR
+
+- Página de exibição dos campeonatos
+    * referência de estilo do webmotors: https://www.webmotors.com.br/motos/sp?estadocidade=S%C3%A3o%20Paulo&tipoveiculo=motos
+
+

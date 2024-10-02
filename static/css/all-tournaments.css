@@ -1,0 +1,92 @@
+main {
+    /* background-color: yellow; */
+    height: 90vh;
+    display: flex;
+    font-family: 'Fredoka';
+}
+
+.filter-tournaments {
+    /* background-color: red; */
+    width: calc(15% - 100px);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 50px 50px;
+}
+
+.filter-div-line {
+    color: #0000002f;
+}
+
+.filter-tournaments .filter-online-mode-inputs {
+    display: flex;
+    margin-top: 20px;
+    /* background-color: blueviolet; */
+}
+
+.filter-tournaments .filter-online-mode > div {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.filter-tournaments > div span {
+    font-weight: 600;
+    font-size: 14pt;
+}
+
+.filter-modality, .filter-teams-quantity, .filter-award {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter-modality input, .filter-award input {
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.filter-teams-quantity > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-teams-quantity input {
+    width: 25%;
+    padding: 10px;
+}
+
+.filter-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.filter-actions button {
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+#filter-apply {
+    background-color: green;
+}
+
+#filter-clear {
+    background-color: orange;
+}
+
+/* ====================== */
+
+/* CONTENT */
+.content {
+    background-color: aqua;
+    width: 80%;
+}
+
+
