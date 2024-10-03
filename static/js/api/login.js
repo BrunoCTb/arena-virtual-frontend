@@ -27,6 +27,7 @@ document.getElementById("login-form").addEventListener("submit", async function 
         if (data.token) {
             localStorage.setItem("authToken", data.token)
             console.log("token armazenado com sucesso!");
+            window.location.href = "/pages/"
         } else {
             console.log("token não recebido!");
         }

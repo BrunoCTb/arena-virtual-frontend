@@ -16,11 +16,19 @@ const NAV_BAR_CONTENT = `
             <a href="#"><li>Ranking</li></a>
         </ul>
         
-        <ul class="auth-header">
+        <ul class="authFalse">
             <a href="/pages/login.html"><li>Login</li></a>
             <a href="/pages/register.html"><li>Cadastro</li></a>
+        </ul>
+
+        <ul class="authTrue">
+            <span>Email</span>
         </ul>
     </header>
 ` 
 
 document.getElementById('header').innerHTML = NAV_BAR_CONTENT;
+
+
+console.log();
+

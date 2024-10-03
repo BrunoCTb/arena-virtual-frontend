@@ -1,5 +1,5 @@
 // fetch personalizado
-function fetchPerso(url, options={}) {
+function fetchPerso(url, options = {}) {
     const token = localStorage.getItem("authToken");
 
     if (!options.headers) {
@@ -12,15 +12,25 @@ function fetchPerso(url, options={}) {
     }
 
     return fetch(url, options)
-                .then(response => {
-                    if (!response.ok) {
-                        console.log("falha na resposta");
-                        return;
-                    }
-                    return response.json();
-                })
-                .catch (error => {
-                    console.log("errooo");
-                    return;
-                })
+        .then(response => {
+
+            // caso nao esteja autorizado ou autenticado
+            // ira remover o token caso tenha e redirecionar para login
+            if (response.status == 403) { 
+                localStorage.removeItem("authToken");
+                window.location.href = "login.html";
+                return;   
+            }
+
+            if (!response.ok) {
+                console.log("falha na resposta");
+                return;
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.log("errooo" + error);
+            return;
+        })
 }
+

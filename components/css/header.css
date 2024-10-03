@@ -31,5 +31,8 @@ header ul>a:hover {
     text-decoration: underline;
 }
 
+.authTrue {
+    display: none;
+}
 
 
