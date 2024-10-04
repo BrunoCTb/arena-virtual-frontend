@@ -16,19 +16,40 @@ const NAV_BAR_CONTENT = `
             <a href="#"><li>Ranking</li></a>
         </ul>
         
-        <ul class="authFalse">
+        <ul id="authFalse">
             <a href="/pages/login.html"><li>Login</li></a>
             <a href="/pages/register.html"><li>Cadastro</li></a>
         </ul>
 
-        <ul class="authTrue">
-            <span>Email</span>
+        <ul id="authTrue">
+            <span id="user-header-show">Email</span>
         </ul>
     </header>
 ` 
 
 document.getElementById('header').innerHTML = NAV_BAR_CONTENT;
 
+function updateHeader() {
+    const api_url = "http://localhost:8080/user/auth" 
 
-console.log();
+    console.log("!!!!!");
+
+    fetchPerso(api_url, {
+        method: "GET",
+    })
+    .then(data => {
+        console.log("Dados recebidos: ", data)
+        if (data) {
+            document.getElementById("user-header-show").innerHTML = data;
+            document.getElementById("authTrue").style.display = "block";
+            document.getElementById("authFalse").style.display = "none";
+        } else {
+            document.getElementById("authFalse").style.display = "block";
+            document.getElementById("authTrue").style.display = "none";
+        }
+    })
+    .catch(error => console.error("Erro: ", error));
+}
+
+updateHeader()
 

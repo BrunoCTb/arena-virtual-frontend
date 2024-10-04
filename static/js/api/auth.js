@@ -13,7 +13,6 @@ function fetchPerso(url, options = {}) {
 
     return fetch(url, options)
         .then(response => {
-
             // caso nao esteja autorizado ou autenticado
             // ira remover o token caso tenha e redirecionar para login
             if (response.status == 403) { 
@@ -33,4 +32,3 @@ function fetchPerso(url, options = {}) {
             return;
         })
 }
-
