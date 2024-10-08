@@ -12,6 +12,7 @@ const NAV_BAR_CONTENT = `
         
         <ul class="app-header-links">
             <a href="#"><li>Campeonatos</li></a>
+            <a href="/pages/create-tournament.html"><li>Criar campeonato (provisório)</li></a>
             <a href="#"><li>Times</li></a>
             <a href="#"><li>Ranking</li></a>
         </ul>

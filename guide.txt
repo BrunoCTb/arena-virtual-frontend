@@ -13,5 +13,6 @@ DIVISÕES DE TAREFAS
 [X] Realizar o registro de users passando os dados corretamente no register.html
 [X] Realizar o login que retorna o token armazenado
 [X] Acessar os endpoints necessários de auth com o token armazenado do login
-[.] Página que mostra todos os campeonatos (Pegar dados do backend)
+[X] Página que mostra todos os campeonatos (Pegar dados do backend)
+[ ] Página de criação de campeonato (Formatos prontos e passo a passo do campeonato)
 [ ] Página de configurações do perfil do usuário (básico)

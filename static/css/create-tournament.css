@@ -1,0 +1,148 @@
+main {
+    /* background-color: tan; */
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fredoka';
+}
+
+/* CARD */
+.create-tournament-card {
+    position: relative;
+    background-color: #222cac;
+    color: #fff;
+    width: calc(75% - 80px);
+    height: calc(80% - 80px);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* VISUALIZAÇÃO DE FASE (1, 2, 3) */
+.process-counter {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.process-counter span {
+    background-color: #ffffff94;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.process-counter #process-counter-one {
+    background-color: #fff;
+}
+
+/* .create-process level-one */
+.create-process {
+    margin-top: 5%;
+}
+
+.level-one {
+    display: flex;
+    flex-direction: column;
+}
+
+.level-one > .process-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.level-one form {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 60%;
+}
+
+.tournament-image-visualization {
+    width: 50%;
+    align-self: center;
+    display: flex;
+}
+
+.tournament-image-visualization img {
+    border: 1px solid #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+/* TITULO E DESCRICAO */
+.tournament-set-title, .tournament-set-description {
+    align-self: center;
+    width: 40%;
+    margin-bottom: 20px;
+}
+
+
+.tournament-set-title input, .tournament-set-description textarea {
+    padding: 10px;
+    width: calc(100% - 20px);
+    border-radius: 8px;
+    border: 1px solid #000;
+    outline: none;
+}
+
+.tournament-set-teams {
+    /* background-color: pink; */
+    width: 40%;
+    align-self: center;
+}
+
+.tournament-set-teams input[type="number"] {
+    width: calc(30% - 10px);
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #000;
+    outline: none;
+    padding: 5px;
+}
+
+.teams-quantity-set-type {
+    font-size: 11pt;
+}
+
+.tournament-set-logo {
+    margin-top: 20px;
+    align-self: center;
+    width: 40%;
+}
+
+
+/* BOTOES DE RETORNAR E AVANCAR */
+.control-level {
+    /* display: flex; */
+}
+
+.control-level button {
+    color: #000;
+    position: absolute;
+    height: 3%;
+    width: 5%;
+    /* padding: 20px; */
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+}
+
+.control-level #return-level {
+    background-color: tomato;
+    bottom: calc(0px + 40px);
+    right: calc(80px + 40px);
+}
+
+.control-level #advance-level {
+    background-color: lightgreen;
+    bottom: calc(0px + 40px);
+    right: calc(0px + 40px);
+}
