@@ -32,19 +32,16 @@ document.getElementById('header').innerHTML = NAV_BAR_CONTENT;
 function updateHeader() {
     const api_url = "http://localhost:8080/user/auth" 
 
-    console.log("!!!!!");
-
     fetchPerso(api_url, {
         method: "GET",
     })
     .then(data => {
-        console.log("Dados recebidos: ", data)
         if (data) {
             document.getElementById("user-header-show").innerHTML = data;
-            document.getElementById("authTrue").style.display = "block";
+            document.getElementById("authTrue").style.display = "flex";
             document.getElementById("authFalse").style.display = "none";
         } else {
-            document.getElementById("authFalse").style.display = "block";
+            document.getElementById("authFalse").style.display = "flex";
             document.getElementById("authTrue").style.display = "none";
         }
     })
