@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/components/css/header.css">
 	<link rel="stylesheet" href="/components/css/footer.css">
-	<link rel="stylesheet" href="/static/css/create-tournament.css">
+	<link rel="stylesheet" href="/static/css/create-tournament/level1.css">
+	<link rel="stylesheet" href="/static/css/create-tournament/level2.css">
 	<title>Criação de campeonato</title>
 </head>
 
@@ -75,7 +75,9 @@
 			</div>
 
 			<div class="create-process level-two" style="display: none;">
-				<h1>Definição de formato(s)</h1>
+				<div class="create-process-title">
+					<h1>Definição de formato(s)</h1>
+				</div>
 				<!-- form para cada quantidade de format escolhido -->
 
 				<!-- FORMATO PRONTO -->
@@ -137,8 +139,9 @@
 	<div id="footer"></div>
 
 	<script src="/static/js/api/auth.js"></script>
-	<script src="/components/js/header.js"></script>
 	<script src="/static/js/api/get-tournaments.js"></script>
+	<script src="/static/js/api/create-tournament.js"></script>
+	<script src="/components/js/header.js"></script>
 	<script src="/components/js/footer.js"></script>
 </body>
 
