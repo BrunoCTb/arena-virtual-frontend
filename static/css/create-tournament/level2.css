@@ -1,5 +1,79 @@
+/* ========= DEFAULT ========= */
+.format2, .format3 {
+    display: none;
+}
+/* ========= */
+
+.level-two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .create-process-title {
     text-align: center;
     margin-bottom: 20px;
 }
 
+.created-formats {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* FORMAT FORM */
+.created-formats .format {
+    background-color: #fdbb2d;
+    padding: 30px;
+}
+
+.format-form {
+    width: 30%;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.format-form label {
+    font-size: 11pt;
+}
+
+.format-form select {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+.best-of input {
+    border: none;
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-top: 10px;
+}
+
+
+/* BOTOES PARA REMOCAO/ADICAO DE FORMATO */
+.control-formats {
+    display: flex;
+    justify-content: end;
+    gap: 2%;
+}
+
+#remove-format, #add-format {
+    background-color: orange;
+    color: #000;
+    padding: 10px;
+    font-size: 10pt;
+    cursor: pointer;
+}
+
+#remove-format {
+    background-color: #ff9696;
+}
+
+#add-format {
+    background-color: #aeffae;
+}

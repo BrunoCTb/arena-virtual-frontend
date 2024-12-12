@@ -1,5 +1,4 @@
 main {
-    height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,8 +11,8 @@ main {
     background-color: #222cac;
     color: #fff;
     width: calc(75% - 80px);
-    height: calc(80% - 80px);
     padding: 40px;
+    margin: 50px 0;
     border-radius: 8px;
 }
 
@@ -43,6 +42,15 @@ main {
     margin-top: 5%;
 }
 
+.created-formats {
+    margin: 40px 0;
+}
+
+.levels {
+    padding: 10% 0;
+}
+
+/* LEVEL 1 */
 .level-one {
     display: flex;
     flex-direction: column;
@@ -57,7 +65,6 @@ main {
     align-self: center;
     display: flex;
     flex-direction: column;
-    /* background-color: red; */
     width: 60%;
 }
 
@@ -82,7 +89,6 @@ main {
     width: 40%;
     margin-bottom: 20px;
 }
-
 
 .tournament-set-title input, .tournament-set-description textarea {
     padding: 10px;
@@ -117,7 +123,6 @@ main {
     width: 40%;
 }
 
-
 /* BOTOES DE RETORNAR E AVANCAR */
 .control-level {
     /* display: flex; */
@@ -126,7 +131,7 @@ main {
 .control-level button {
     color: #000;
     position: absolute;
-    height: 3%;
+    height: 30px;
     width: 5%;
     /* padding: 20px; */
     cursor: pointer;

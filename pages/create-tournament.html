@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,110 +23,157 @@
 				<span class="process-visualize" id="process-counter-three"> </span>
 			</div>
 
-			<div class="create-process level-one">
-				<div class="process-title">
-					<h1>Dados básicos do campeonato</h1>
+			<div class="levels">
+
+
+				<div class="create-process level-one">
+					<div class="process-title">
+						<h1>Dados básicos do campeonato</h1>
+					</div>
+
+					<form class="tournament-set-form">
+						<div class="tournament-image-visualization">
+							<img src="" alt="Imagem selecionada">
+						</div>
+
+						<div class="tournament-set-title">
+							<input type="text" placeholder="Título">
+						</div>
+
+						<div class="tournament-set-description">
+							<textarea placeholder="Descrição"></textarea>
+						</div>
+
+						<div class="tournament-set-teams">
+							<div class="teams-quantity">
+								<label>Quantidade de times</label>
+
+								<!-- 'n' times -->
+								<div class="fixed-teams-quantity">
+									<input type="number" placeholder="">
+								</div>
+
+								<!-- De 'x' até 'y' -->
+								<div class="dynamic-teams-quantity" style="display: none">
+									<input type="number" placeholder="De">
+									<input type="number" placeholder="Até">
+								</div>
+							</div>
+
+							<div class="teams-quantity-set-type">
+								<div>
+									<input type="radio" name="quantity-type" checked>
+									<span>Valor fixo</span>
+								</div>
+								<div>
+									<input type="radio" name="quantity-type" value="">
+									<span>Dinâmico</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="tournament-set-logo">
+							<input type="file">
+						</div>
+					</form>
 				</div>
 
-				<form class="tournament-set-form">
-					<div class="tournament-image-visualization">
-						<img src="" alt="Imagem selecionada">
+				<div class="create-process level-two" style="display: none;">
+					<div class="create-process-title">
+						<h1>Definição de formato(s)</h1>
 					</div>
 
-					<div class="tournament-set-title">
-						<input type="text" placeholder="Título">
-					</div>
-					
-					<div class="tournament-set-description">
-						<textarea placeholder="Descrição"></textarea>
-					</div>
+					<!-- FORMATO PRONTO -->
+					<div class="created-formats">
+						<div class="format format1">
+							<h2>Formato 1</h2>
 
-					<div class="tournament-set-teams">
-						<div class="teams-quantity">
-							<label>Quantidade de times</label>
+							<form class="format-form">
+								<div class="formats-list">
+									<label>Tipo de formato</label>
+									<select>
+										<option>Mata-mata</option>
+										<option>Mata-mata com 2ª chance</option>
+										<option>Fase de grupos/Pontos corridos</option>
+										<option>Formato suiço</option>
+										<!-- <option>Personalizado</option> -->
+									</select>
+								</div>
 
-							<!-- 'n' times -->
-							<div class="fixed-teams-quantity">
-								<input type="number" placeholder="">
-							</div>
-
-							<!-- De 'x' até 'y' -->
-							<div class="dynamic-teams-quantity" style="display: none">
-								<input type="number" placeholder="De">
-								<input type="number" placeholder="Até">
-							</div>
+								<div class="best-of">
+									<label>Melhor de (quantas partidas)</label>
+									<input type="number" placeholder="melhor de">
+								</div>
+							</form>
 						</div>
 
-						<div class="teams-quantity-set-type">
-							<div>
-								<input type="radio" name="quantity-type" checked>
-								<span>Valor fixo</span>
-							</div>
-							<div>
-								<input type="radio" name="quantity-type" value="">
-								<span>Dinâmico</span>
-							</div>
+						<div class="format format2">
+							<h2>Formato 2</h2>
+
+							<form class="format-form">
+								<div>
+									<select>
+										<option>Mata-mata</option>
+										<option>Mata-mata com 2ª chance</option>
+										<option>Fase de grupos/Pontos corridos</option>
+										<option>Formato suiço</option>
+										<!-- <option>Personalizado</option> -->
+									</select>
+								</div>
+
+								<div class="best-of">
+									<input type="number" placeholder="melhor de">
+								</div>
+							</form>
+						</div>
+
+						<div class="format format3">
+							<h2>Formato 3</h2>
+
+							<form class="format-form">
+								<div>
+									<select>
+										<option>Mata-mata</option>
+										<option>Mata-mata com 2ª chance</option>
+										<option>Fase de grupos/Pontos corridos</option>
+										<option>Formato suiço</option>
+										<!-- <option>Personalizado</option> -->
+									</select>
+								</div>
+
+								<div class="best-of">
+									<input type="number" placeholder="melhor de">
+								</div>
+							</form>
+						</div>
+
+						<div class="control-formats">
+							<span id="remove-format">Remover</span>
+							<span id="add-format">Adicionar</span>
 						</div>
 					</div>
-
-					<div class="tournament-set-logo">
-						<input type="file">
-					</div>
-				</form>
-			</div>
-
-			<div class="create-process level-two" style="display: none;">
-				<div class="create-process-title">
-					<h1>Definição de formato(s)</h1>
 				</div>
-				<!-- form para cada quantidade de format escolhido -->
 
-				<!-- FORMATO PRONTO -->
-				<form>
-					<div class="format-quantity">
-						<span>Quantidade de formatos:</span>
-						<select>
-							<option value="1" selected>1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-						</select>
-					</div>
+				<div class="create-process level-three" style="display: none;">
+					<h1>Configurações adicionais</h1>
 
-					<div class="format">
-						<select>
-							<option>Mata-mata</option>
-							<option>Mata-mata com 2ª chance</option>
-							<option>Fase de grupos/Pontos corridos</option>
-							<option>Formato suiço</option>
-							<option>Personalizado</option>
-						</select>
-					</div>
-
-					<div class="best-of">
-						<input type="number" placeholder="melhor de">
-					</div>
-				</form>
-			</div>
-
-			<div class="create-process level-three" style="display: none;">
-				<h1>Configurações adicionais</h1>
-
-				<form>
-					<div class="set-online-mode">
-						<div>
-							<input type="radio" name="online" checked>
-							<span>Sim</span>
+					<form>
+						<div class="set-online-mode">
+							<div>
+								<input type="radio" name="online" checked>
+								<span>Sim</span>
+							</div>
+							<div>
+								<input type="radio" name="online">
+								<span>Não</span>
+							</div>
 						</div>
-						<div>
-							<input type="radio" name="online">
-							<span>Não</span>
-						</div>
-					</div>
 
-					<div class="set-modality">
-						<input type="text" placeholder="Modalidade">
-					</div>
-				</form>
+						<div class="set-modality">
+							<input type="text" placeholder="Modalidade">
+						</div>
+					</form>
+				</div>
 			</div>
 
 			<div class="control-level">
@@ -134,7 +182,6 @@
 			</div>
 		</div>
 	</main>
-
 
 	<div id="footer"></div>
 
