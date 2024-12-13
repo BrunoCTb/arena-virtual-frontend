@@ -37,9 +37,7 @@ main {
     background-color: #fff;
 }
 
-/* .create-process level-one */
 .create-process {
-    margin-top: 5%;
 }
 
 .created-formats {
@@ -56,7 +54,7 @@ main {
     flex-direction: column;
 }
 
-.level-one > .process-title {
+.level-one > .create-process-title {
     text-align: center;
     margin-bottom: 20px;
 }
@@ -99,7 +97,6 @@ main {
 }
 
 .tournament-set-teams {
-    /* background-color: pink; */
     width: 40%;
     align-self: center;
 }
@@ -124,16 +121,11 @@ main {
 }
 
 /* BOTOES DE RETORNAR E AVANCAR */
-.control-level {
-    /* display: flex; */
-}
-
 .control-level button {
     color: #000;
     position: absolute;
     height: 30px;
     width: 5%;
-    /* padding: 20px; */
     cursor: pointer;
     font-size: 12px;
     text-align: center;

@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="/components/css/footer.css">
 	<link rel="stylesheet" href="/static/css/create-tournament/level1.css">
 	<link rel="stylesheet" href="/static/css/create-tournament/level2.css">
+	<link rel="stylesheet" href="/static/css/create-tournament/level3.css">
 	<title>Criação de campeonato</title>
 </head>
 
@@ -26,8 +27,8 @@
 			<div class="levels">
 
 
-				<div class="create-process level-one">
-					<div class="process-title">
+				<div class="create-process level-one" style="display: none;">
+					<div class="create-process-title">
 						<h1>Dados básicos do campeonato</h1>
 					</div>
 
@@ -102,7 +103,7 @@
 
 								<div class="best-of">
 									<label>Melhor de (quantas partidas)</label>
-									<input type="number" placeholder="melhor de">
+									<input type="number" placeholder="Ex: 1">
 								</div>
 							</form>
 						</div>
@@ -122,7 +123,7 @@
 								</div>
 
 								<div class="best-of">
-									<input type="number" placeholder="melhor de">
+									<input type="number" placeholder="Ex: 1">
 								</div>
 							</form>
 						</div>
@@ -142,7 +143,7 @@
 								</div>
 
 								<div class="best-of">
-									<input type="number" placeholder="melhor de">
+									<input type="number" placeholder="Ex: 1">
 								</div>
 							</form>
 						</div>
@@ -154,11 +155,14 @@
 					</div>
 				</div>
 
-				<div class="create-process level-three" style="display: none;">
-					<h1>Configurações adicionais</h1>
+				<div class="create-process level-three">
+					<div class="create-process-title">
+						<h1>Configurações adicionais</h1>
+					</div>
 
 					<form>
 						<div class="set-online-mode">
+							<span>Modo online:</span>
 							<div>
 								<input type="radio" name="online" checked>
 								<span>Sim</span>
@@ -170,7 +174,8 @@
 						</div>
 
 						<div class="set-modality">
-							<input type="text" placeholder="Modalidade">
+							<label>Modalidade</label>
+							<input type="text" placeholder="Ex: Games - CS 2">
 						</div>
 					</form>
 				</div>
