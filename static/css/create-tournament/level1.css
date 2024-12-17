@@ -37,15 +37,16 @@ main {
     background-color: #fff;
 }
 
-.create-process {
-}
-
 .created-formats {
     margin: 40px 0;
 }
 
 .levels {
     padding: 10% 0;
+}
+
+.levels > .level-two, .levels > .level-three{
+    display: none;
 }
 
 /* LEVEL 1 */

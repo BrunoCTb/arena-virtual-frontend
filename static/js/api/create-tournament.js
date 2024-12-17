@@ -1,34 +1,40 @@
 // SETAR OS NÍVEIS DE CRIAÇÃO DE CAMPEONATO
 function changeLevel(event) {
-    // os 3 itens que serao navegados
     let arr = document.getElementsByClassName("create-process");
     let balls = document.getElementsByClassName("process-visualize");
     const showDisplay = "flex";
 
+    // Qual botao acionado (agora fora do loop)
+    const isAdvance = event.target.id === "advance-level";
+    const isReturn = event.target.id === "return-level";
 
+    // loop de cada etapa para encontrar a atual
     for (let i = 0; i < arr.length; i++) {
-        if (event.target.id == "advance-level") {
-            console.log("advance");
-            next = arr[i + 1] || arr[0];
-            nextBall = balls[i + 1] || balls[0];
-            
-        } else if (event.target.id == "return-level") {
-            console.log("return");
-            next = arr[i - 1] || arr[arr.length - 1];
-            nextBall = balls[i - 1] || balls[balls.length - 1];
-        }
 
-        if (arr[i].style.display != "none") {
+        // a atual que sera a que está sendo mostrada logicamente sera substituida por outra
+        if (arr[i].style.display !== "none") {
+            // Define os próximos índices, podendo ser o anterior ou seguinte
+            let nextIndex = isAdvance ? i + 1 : i - 1;
+
+            // Impede o usuario de ir direto da etapa 1 para a 3 ou da 3 para 1,
+            // no caso tendo que realizar o caminho '123' ou '321'
+            if (nextIndex < 0 || nextIndex >= arr.length) {
+                return; // assim causa o efeito de efeito nenhum
+            }
+
+            // a etapa atual fica "display none" e a proxima aparece, que pode ser a anterior
             arr[i].style.display = "none";
-            next.style.display = showDisplay;
+            arr[nextIndex].style.display = showDisplay;
 
-            nextBall.style.backgroundColor = "#fff";
+            // atualiza as bolinhas visuais
             balls[i].style.backgroundColor = "#ffffff94";
+            balls[nextIndex].style.backgroundColor = "#fff";
 
-            break
+            break;
         }
     }
 }
+
 
 returnBtn = document.getElementById("return-level");
 advanceBtn = document.getElementById("advance-level");
@@ -37,16 +43,7 @@ advanceBtn.addEventListener("click", changeLevel);
 returnBtn.addEventListener("click", changeLevel);
 
 
-// mudar quantidade de form dependendo de quantos formatos forem selecionados
-function selectFormat() {
-    // criar um novo form
-    
-
-    
-}
-
-// adicionar ou remover formatos - de 1 (pelo menos) até 3
-
+// Adicionar ou remover formatos - de 1 (pelo menos) até 3
 const FORMAT_QUANTITY = 3
 const removeFormatBtn = document.getElementById("remove-format");
 const addFormatBtn = document.getElementById("add-format");
