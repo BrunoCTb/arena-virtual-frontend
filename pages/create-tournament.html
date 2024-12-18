@@ -61,11 +61,11 @@
 
 							<div class="teams-quantity-set-type">
 								<div>
-									<input type="radio" name="quantity-type" checked>
+									<input id="quantity-type-fixed" type="radio" name="quantity-type" checked onclick="chooseTeamQuantityStyle('fixed')">
 									<span>Valor fixo</span>
 								</div>
 								<div>
-									<input type="radio" name="quantity-type" value="">
+									<input id="quantity-type-dynamic" type="radio" name="quantity-type" value="" onclick="chooseTeamQuantityStyle('dynamic')">
 									<span>Dinâmico</span>
 								</div>
 							</div>

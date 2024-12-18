@@ -35,13 +35,31 @@ function changeLevel(event) {
     }
 }
 
+// Mudança de tipo de quantidade de times na etapa 1,
+// podendo ser fixa (x times) ou dinâmica (de x até y)
+function chooseTeamQuantityStyle(type) {
+    let fixedDisplay = "flex";
+    let dynamicDisplay = "none";
+        
+    if (type == "dynamic") {
+        fixedDisplay = "none";
+        dynamicDisplay = "flex";
+    }
 
+    let fixed = document.getElementsByClassName("fixed-teams-quantity")[0];
+    fixed.style.display = fixedDisplay;
+
+    let dynamic = document.getElementsByClassName("dynamic-teams-quantity")[0];
+    dynamic.style.display = dynamicDisplay;
+}
+
+
+// Botões de avancer e retornar a etapa
 returnBtn = document.getElementById("return-level");
 advanceBtn = document.getElementById("advance-level");
 
 advanceBtn.addEventListener("click", changeLevel);
 returnBtn.addEventListener("click", changeLevel);
-
 
 // Adicionar ou remover formatos - de 1 (pelo menos) até 3
 const FORMAT_QUANTITY = 3
