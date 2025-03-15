@@ -16,6 +16,8 @@
 
 	<div id="header"></div>
 
+	<button onclick="getFormData()">Validar</button>
+
 	<main>
 		<div class="create-tournament-card">
 			<div class="process-counter">
@@ -36,11 +38,10 @@
 						</div>
 
 						<div class="tournament-set-title">
-							<input type="text" placeholder="Título">
+							<input class="getData1" type="text" placeholder="Título">
 						</div>
-
 						<div class="tournament-set-description">
-							<textarea placeholder="Descrição"></textarea>
+							<textarea class="getData1" placeholder="Descrição"></textarea>
 						</div>
 
 						<div class="tournament-set-teams">
@@ -49,13 +50,13 @@
 
 								<!-- 'n' times -->
 								<div class="fixed-teams-quantity">
-									<input type="number" placeholder="">
+									<input class="getData1" type="number" placeholder="">
 								</div>
 
 								<!-- De 'x' até 'y' -->
 								<div class="dynamic-teams-quantity" style="display: none">
-									<input type="number" placeholder="De">
-									<input type="number" placeholder="Até">
+									<input class="getData1" type="number" placeholder="De">
+									<input class="getData1" type="number" placeholder="Até">
 								</div>
 							</div>
 
@@ -72,7 +73,7 @@
 						</div>
 
 						<div class="tournament-set-logo">
-							<input type="file">
+							<input class="getData1" type="file">
 						</div>
 					</form>
 				</div>
@@ -162,18 +163,18 @@
 						<div class="set-online-mode">
 							<span>Modo online:</span>
 							<div>
-								<input type="radio" name="online" checked>
+								<input class="getData3" type="radio" name="online" checked value="0">
 								<span>Sim</span>
 							</div>
 							<div>
-								<input type="radio" name="online">
+								<input class="getData3" type="radio" name="online" value="1">
 								<span>Não</span>
 							</div>
 						</div>
 
 						<div class="set-modality">
 							<label>Modalidade</label>
-							<input type="text" placeholder="Ex: Games - CS 2">
+							<input class="getData3" type="text" placeholder="Ex: Games - CS 2">
 						</div>
 					</form>
 				</div>
