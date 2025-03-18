@@ -3,19 +3,9 @@ function finishesCreation() {
 }
 
 function getFormData() {
-    // == STEP 1 ==
-    // titulo - 1 input text
-    // descricao - 1 textarea
-    // quantidade de times - 1 input number ou 2 input number
-    // image - 1 input arquivo
-    // =======
     // == STEP 2 ==
     // de 1 select até 3
     // de 1 input number até 3
-    // =======
-    // == STEP 3 ==
-    // modo online - 2 input radio, 1 que sairá o valor
-    // modalidade - 1 input text
 
      // Seleciona todos os inputs
     let step1 = document.getElementsByClassName("level-one")[0];
@@ -39,8 +29,6 @@ function getFormData() {
 
     let modality = d3[2].value;
 
-    console.log();
-    
     json = {
         "title": title,
         "description": description,
@@ -49,8 +37,29 @@ function getFormData() {
         "minTeams": teamsMin, 
         "maxTeams": teamsMax,
         "totalTeams": teamsTotal,
-        "imageRepresentationUrl": image
+        "imageRepresentationUrl": image,
+        "format": getFormats()
     }
+}
+
+function getFormats() { 
+    let formatsArray = []
+    let formats = document.getElementsByClassName("format");    
+
+    for (let i=0; i<formats.length; i++) {
+        if (window.getComputedStyle(formats[i]).display == 'block') {
+            let select = formats[i].querySelector('select');
+            let input = formats[i].querySelector('input[type="number"]');
+
+            // adicionar no array cada formato selecionado com os atributos
+            formatsArray.push({
+                select: select.value,
+                input: input.value 
+            });
+        }
+    }
+
+    return formatsArray;
 }
 
 // SETAR OS NÍVEIS DE CRIAÇÃO DE CAMPEONATO
