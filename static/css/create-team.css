@@ -1,0 +1,58 @@
+main {
+    font-family: 'Fredoka';
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-team-card {
+    width: calc(60% - 4%);
+    height: calc(60vh - 4%);
+    background-color: #fff2f4;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.create-team-title {
+    background-color: #5b43e7;
+    color: #fff;
+    padding: 3% 3%;
+}
+
+.create-team-title img {
+    width: 30px;
+    filter: invert(100%);
+}   
+
+.create-team-title h1 {
+    display: flex;
+    align-items: center;
+    gap: 1%;
+    font-weight: 600;
+}
+
+.create-team-content {
+    /* height: 100%; */
+}
+
+.create-team-content form {
+    background-color: yellow;
+    display: flex;
+}
+
+.create-team-content form > .team-image {
+    width: 30%;
+    background-color: red;
+}
+
+.create-team-content form > .team-image > input {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 80%;
+    height: 80%;
+    background-color: orange;
+}
