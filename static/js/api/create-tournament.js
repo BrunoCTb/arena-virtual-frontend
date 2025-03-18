@@ -3,11 +3,6 @@ function finishesCreation() {
 }
 
 function getFormData() {
-    // == STEP 2 ==
-    // de 1 select até 3
-    // de 1 input number até 3
-
-     // Seleciona todos os inputs
     let step1 = document.getElementsByClassName("level-one")[0];
     let d1 = step1.querySelectorAll(".getData1");
 

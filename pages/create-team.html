@@ -20,27 +20,27 @@
             <div class="create-team-content">
                 <form>
                     <div class="team-image">
-                        <input type="file">
+                        <input type="file" class="getData">
                     </div>
 
                     <div class="inputs">
                         <div class="team-names">
-                            <input type="text" placeholder="Nome do time">
-                            <input type="text" placeholder="TAG">
+                            <input type="text" placeholder="Nome do time" class="getData">
+                            <input type="text" placeholder="TAG" class="getData">
                         </div>
                         <div class="team-description">
-                            <textarea placeholder="Descrição"></textarea>
+                            <textarea placeholder="Descrição" class="getData"></textarea>
                         </div>
                         <div class="team-invite">
                             <label>Players podem solicitar entrar</label>
-                            <input type="radio" name="invite" checked>Sim
-                            <input type="radio" name="invite">Não
+                            <input type="radio" name="invite" checked  class="getData">Sim
+                            <input type="radio" name="invite" class="getData">Não
                         </div>
                     </div>
                 </form>
 
                 <div class="create-team-actions">
-                    <button>Criar</button>
+                    <button onclick="getFormData()">Criar</button>
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
     <div id="footer"></div>
     
     <script src="/static/js/api/auth.js"></script>
-    <script src="/static/js/api/create-tournament.js"></script>
+    <script src="/static/js/api/create-team.js"></script>
     <script src="/components/js/header.js"></script>
     <script src="/components/js/footer.js"></script>
 </body>
