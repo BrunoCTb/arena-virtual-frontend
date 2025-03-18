@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/components/css/header.css">
+	<link rel="stylesheet" href="/components/css/footer.css">
+    <link rel="stylesheet" href="/static/css/create-team.css">
+    <title>Criação de time</title>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="create-team-card">
+            <div class="create-team-title">
+                
+            </div>
+
+            <div class="create-team-content">
+                <form>
+                    <div class="team-image">
+
+                    </div>
+
+                    <div class="inputs">
+                        <div class="team-names">
+                            <input type="text" placeholder="Nome do time">
+                            <input type="text" placeholder="TAG">
+                        </div>
+                        <div class="team-description">
+                            <textarea placeholder="Descrição"></textarea>
+                        </div>
+                        <div class="team-invite">
+                            <label>Players podem solicitar entrar</label>
+                            <input type="radio" name="invite" checked>Sim
+                            <input type="radio" name="invite">Não
+                        </div>
+                    </div>
+                </form>
+
+                <div class="create-team-actions">
+                    <button>Criar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <div id="footer"></div>
+    
+    <script src="/static/js/api/auth.js"></script>
+    <script src="/static/js/api/create-tournament.js"></script>
+    <script src="/components/js/header.js"></script>
+    <script src="/components/js/footer.js"></script>
+</body>
+</html>
