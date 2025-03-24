@@ -12,7 +12,7 @@ function getTournaments() {
 
 // RECEBE OS TORNEIOS DISPONIVEIS DO BACKEND E MODIFICA O HTML
 function setTournaments() { 
-    const url = "http://localhost:8080/tournament/all";
+    // const url = "http://localhost:8080/tournament/all";
 
     fetchPerso(api_url, {
         method: "GET"
