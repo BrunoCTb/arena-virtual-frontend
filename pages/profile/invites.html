@@ -13,30 +13,27 @@
     <main>
         <h1>Convites</h1>
 
+        <!-- <div>
+            <button onclick="setReceivedInvite()">Recebidos</button>
+            <button onclick="setSentInvite()">Enviados</button>
+        </div> -->
+
         <div class="team-invites">
-            <div class="sent-invitations">
-                <h2>Enviados</h2>
-               <!-- ... -->
+            <div class="received-invitations">
+                <h2>Recebidos</h2>
+                <!-- ... -->
+                
+                <span id="not-found-received-invitations"></span>
             </div>
 
-            <!-- <div class="received-invitations">
-                <div class="received-invite">
-                    <div class="received-invite-content">
-                        <div class="received-invite-data">
-                            <h2>Solicitação do ${user/player}</h2>
-                            <span>Recebido em ${00/00/0000}</span>
-                            <span>Time: ${Time}</span>
-                        </div>
-                        <div class="received-invite-status">
-                            <span>${Pendente}</span>
-                        </div>
-                    </div>
-                    <div class="received-invite-actions">
-                        <button>Aceitar</button>
-                        <button>Rejeitar</button>
-                    </div>
-                </div>
-            </div> -->
+            <br><br><hr><br><br>
+
+            <div class="sent-invitations">
+                <h2>Enviados</h2>
+                <!-- ... -->
+
+                <span id="not-found-sent-invitations"></span>
+            </div>
         </div>
     </main>
 
@@ -44,45 +41,7 @@
 
     <script src="/static/js/api/auth.js"></script>
 
-    <script>
-
-        let username = "username123"
-        let url = `http://localhost:8080/${username}/invites/received`;
-
-        fetchPerso(url, {
-            method: "GET"
-        })
-        .then(d => {
-            let sentInvitations = document.getElementsByClassName("sent-invitations")[0];
-
-            console.log(d);
-            
-
-            for (let invite of d) {
-                let inviteHTML = let = `<div class="sent-invite">
-                        <div class="sent-invite-content">
-                            <div class="sent-invite-data">
-                                <h2>Convite para ${invite.invitedBy.username}</h2>
-                                <span>Enviado em ${invite.createdAt}</span>
-                                <span>Time: ${invite.teamTarget.name}</span>
-                            </div>
-                            <div class="sent-invite-status">
-                                <span>${invite.inviteStatus}</span>
-                            </div>
-                        </div>
-                        <div class="sent-invite-actions">
-                            <button>Cancelar</button>
-                        </div>
-                    </div>`
-                
-            sentInvitations.innerHTML += inviteHTML;
-
-            }
-            
-        })
-        
-
-    </script>
+    <script src="/static/js/api/invite.js"></script>
 
 	
 	<script src="/components/js/header.js"></script>
