@@ -13,7 +13,7 @@ const NAV_BAR_CONTENT = `
         <ul class="app-header-links">
             <a href="/pages/all-tournaments.html"><li>Campeonatos</li></a>
             <a href="/pages/profile/invites.html"><li>Convites - times (provisório)</li></a>
-            <a href="#"><li>Times</li></a>
+            <a href="/pages/all-teams.html""><li>Times</li></a>
             <a href="#"><li>Ranking</li></a>
         </ul>
         
