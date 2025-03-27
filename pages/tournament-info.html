@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campeonato - ${Campeonato}</title>
+</head>
+<body>
+    
+    <main>
+        <div class="tournament-main-card">
+            <div class="tournament-image">
+                
+            </div>
+            <div class="tournament-main-content">
+                <div class="tournament-main-info">
+                    <div class="tournament-title">
+                        <h2>${tournament title}</h2>
+                        <span>${STATUS}</span>
+                    </div>
+                    <div class="tournament-category">
+                        <span>${Categoria}</span>
+                    </div>
+                    <div class="tournament-description">
+                        <span>${tournament description}</span>
+                    </div>
+                </div>
+
+                <div class="tournament-visual-content">
+                    <div class="tournament-teams-quantity">
+                        <span>Times</span>
+                        <span>${8/16}</span>
+                    </div>
+                    <div class="tournament-award">
+                        <span>Premiação</span>
+                        <span>${R$ 500,00}</span>
+                    </div>
+                </div>
+
+                <div class="tournament-other-data">
+                    <div>
+                        <span>Início:</span>
+                        <span>${00/00/0000}</span>
+                    </div>
+                    <div>
+                        <span>Finaliza em:</span>
+                        <span>${00/00/0000}</span>
+                    </div>
+                    <div>
+                        <span>Criador:</span>
+                        <span>${User123}</span>
+                    </div><div>
+                        <span>Criado em:</span>
+                        <span>${00/00/0000}</span>
+                    </div>
+                </div>
+
+                <div class="tournament-rules">
+                    <ul class="tournament-rules-list">
+                        <li>${rule1}</li>
+                        <li>${rule2}</li>
+                        <li>${rule3}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="tournament-external-info">
+            <div class="tournament-running">
+                <!-- Funcionamento do campeonato de fato (mostrar todas as fases do campeonatos e as partidas de forma mais visual, como o hltv) -->
+            </div>
+
+            <div class="tournament-matches">
+                <h2>Partidas</h2>
+
+                <!-- JS loop -->
+                <div class="tournament-list-of-matches">
+                    <div class="t-match">
+                        <div class="t-match-basic-info">
+                            <div class="t-match-status">
+                                <span>${Pendente}</span>
+                            </div>
+                            <div class="t-match-datetime">
+                                <span>Início</span>
+                                <span>{$date}</span>
+                                <span>{$time}</span>
+                            </div>
+                        </div>
+
+                        <div class="t-match-teams">
+                            <div class="t-match-team1">
+                                <img src="#" alt="">
+                                <span>${team title}</span>
+                            </div>
+
+                            <div class="t-match-result">
+                                <div class="t-match-t1-result">
+                                    <span>${}</span>
+                                </div>
+
+                                <span>x</span>
+
+                                <div class="t-match-t1-result">
+                                    <span>${}</span>
+                                </div>
+                            </div>
+
+                            <div class="t-match-team1">
+                                <img src="#" alt="">
+                                <span>${team title}</span>
+                            </div>
+
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tournament-teams">
+                <h2>Times participantes</h2>
+
+                <!-- JS loop -->
+                <div class="tournament-list-of-teams">
+                    <div class="t-team">
+                        <div class="t-team-image">
+                            <img src="#" alt="">
+                        </div>
+
+                        <div class="t-team-data">
+                            <h4>${Team name}</h4>
+                        </div>
+
+                        <div class="t-team-actions">
+                            <a href="/pages/team-info.html"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </main>
+    
+</body>
+</html>
