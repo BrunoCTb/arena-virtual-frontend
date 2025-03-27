@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time - ${time}</title>
+</head>
+<body>
+    <main>
+        <div class="team-main-card">
+            <div class="team-image">
+                
+            </div>
+
+            <div class="team-data">
+                <h2>${Team title}</h2>
+                <p>${Team description}</p>
+
+                <div class="team-visual-info">
+                    <div>
+                        <span>${15}</span>
+                        <span>Jogadores</span>
+                    </div>
+                    <div>
+                        <span>${120}</span>
+                        <span>Partidas</span>
+                    </div>
+                    <div>
+                        <span>${78}</span>
+                        <span>Vitórias</span>
+                    </div>
+                    <div>
+                        <span>${42}</span>
+                        <span>Derrotas</span>
+                    </div>
+                </div>
+
+                <div class="team-others-data">
+                    <div>
+                        <span>Criador:</span>
+                        <span>${User123}</span>
+                    </div>
+                    <div>
+                        <span>Criado em:</span>
+                        <span>${00/00/0000}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-actions">
+                <button>Convite</button>
+            </div>
+        </div>
+
+        <div class="team-others-info">
+            <div class="t-players">
+                <h2>Jogadores do time</h2>
+                <div class="t-list-of-players">
+                    <span>{$15}</span>
+                    <span>encontrados</span>
+
+                    <!-- JS loop -->
+                    <div class="t-player-found">
+                        <div class="t-player-img">
+                            <img src="#" alt="">
+                        </div>
+                        <div class="t-player-data">
+
+                        </div>
+                        <div class="t-player-actions">
+                            <a href="/pages/player-info.html">Ver perfil</a>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Caso não possui jogador -->
+                <!-- <span>Nenhum jogador encontrado</span> -->
+            </div>
+            <div class="t-tournaments">
+                <h2>Torneios que participa</h2>      
+
+                <!-- Caso não participe de nenhum torneio -->
+                <span>O time não participa de nenhum campeonato</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
