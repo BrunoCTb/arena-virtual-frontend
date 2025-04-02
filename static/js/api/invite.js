@@ -1,5 +1,6 @@
 let username = "username123"
 
+// MOSTRAR OS CONVITES RECEBIDOS NO HTML
 function setReceivedInvite() {
 	let receivedUrl = `http://localhost:8080/${username}/invites/received`;
 	
@@ -16,27 +17,28 @@ function setReceivedInvite() {
 
 		for (let received of data) {
 			let inviteHTML = let = `<div class="received-invite">
-																			<div class="received-invite-content">
-																					<div class="received-invite-data">
-																							<h2>Solicitação do ${received.invitedTarget.username}</h2>
-																							<span>Recebido em ${received.createdAt}</span>
-																							<span>Time: ${received.teamTarget.name}</span>
-																					</div>
-																					<div class="received-invite-status">
-																							<span>${received.inviteStatus}</span>
-																					</div>
-																			</div>
-																			<div class="received-invite-actions">
-																					<button>Aceitar</button>
-																					<button>Rejeitar</button>
-																			</div>
-																	</div>`
+			<div class="received-invite-content">
+				<div class="received-invite-data">
+					<h2>Solicitação do ${received.invitedTarget.username}</h2>
+					<span>Recebido em ${received.createdAt}</span>
+					<span>Time: ${received.teamTarget.name}</span>
+				</div>
+				<div class="received-invite-status">
+					<span>${received.inviteStatus}</span>
+				</div>
+				</div>
+				<div class="received-invite-actions">
+					<button>Aceitar</button>
+					<button>Rejeitar</button>
+				</div>
+			</div>`
 
 			receivedInvitations.innerHTML += inviteHTML;
 		}
 	})
 }
 
+// MOSTRAR OS CONVITES ENVIADOS NO HTML
 function setSentInvite() {
 	let sentUrl = `http://localhost:8080/${username}/invites/sent`;
 
@@ -53,25 +55,31 @@ function setSentInvite() {
 
 		for (let invite of data) {
 			let inviteHTML = let = `<div class="sent-invite">
-									<div class="sent-invite-content">
-											<div class="sent-invite-data">
-													<h2>Convite para ${invite.invitedBy.username}</h2>
-													<span>Enviado em ${invite.createdAt}</span>
-													<span>Time: ${invite.teamTarget.name}</span>
-											</div>
-											<div class="sent-invite-status">
-													<span>${invite.inviteStatus}</span>
-											</div>
-									</div>
-									<div class="sent-invite-actions">
-											<button>Cancelar</button>
-									</div>
-							</div>`
+				<div class="sent-invite-content">
+					<div class="sent-invite-data">
+						<h2>Convite para ${invite.invitedBy.username}</h2>
+						<span>Enviado em ${invite.createdAt}</span>
+						<span>Time: ${invite.teamTarget.name}</span>
+					</div>
+					<div class="sent-invite-status">
+						<span>${invite.inviteStatus}</span>
+					</div>
+				</div>
+				<div class="sent-invite-actions">
+					<button>Cancelar</button>
+				</div>
+			</div>`
 
 			sentInvitations.innerHTML += inviteHTML;
 		}
 	})
 }
+
+// Enviar convite para o player entrar no time
+function sendTeamInvite(param) {
+	
+}
+
 
 setReceivedInvite();
 setSentInvite();
