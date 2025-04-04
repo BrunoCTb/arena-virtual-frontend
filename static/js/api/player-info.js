@@ -1,5 +1,7 @@
 function getPlayer() {
     let publicId = localStorage.getItem("playerProfileIdSelected");
+    
+    localStorage.removeItem("playerProfileIdSelected")
 
     const url = 'http://localhost:8080/player/' + publicId; 
 
