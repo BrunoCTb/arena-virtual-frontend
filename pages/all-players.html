@@ -1,45 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogadores</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/static/css/all-players.css">
+	<title>Jogadores</title>
 </head>
+
 <body>
 
-    <main>
-        <div class="search-player">
-            <input type="text" placeholder="Buscar jogadores"> 
-            <div class="search-player-filter">
+	<main>
+		<div class="search-player">
+			<input type="text" placeholder="Buscar jogadores">
+			<div class="search-player-filter">
 
-            </div>
-        </div>
+			</div>
+		</div>
 
-        <div class="list-of-players">
-            <div class="player-img">
-                <img src="#" alt="">
-            </div>
+		<div class="list-of-players">
+			<!-- Edit com JS -->
+		</div>
+	</main>
 
-            <div class="player-data">
-                <div class="player-info">
-                    <h3>${Player name}</h3>
-                    <div class="player-current">
-                        <div class="player-tournaments">
-                            <span>${2}</span>
-                            <span>times</span>
-                        </div>
+	<script src="/static/js/api/auth.js"></script>
+	<script src="../static/js/api/all-players.js"></script>
 
-                        <div class="player-teams">
-                            <span>${3}</span>
-                            <span>campeonatos</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="player-actions">
-                    <button>Ver perfil</button>
-                </div>
-            </div>
-        </div>
-    </main>
 </body>
+
 </html>

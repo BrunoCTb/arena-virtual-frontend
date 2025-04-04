@@ -1,0 +1,10 @@
+.list-of-players {
+    width: 100vw;
+    display: flex;
+    gap: 10px;
+}
+
+.player {
+    border: 1px solid #000;
+    width: 30%;
+}

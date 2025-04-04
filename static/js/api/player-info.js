@@ -1,6 +1,8 @@
-const url = 'http://localhost:8080/player/1'; 
-
 function getPlayer() {
+    let publicId = localStorage.getItem("playerProfileIdSelected");
+
+    const url = 'http://localhost:8080/player/' + publicId; 
+
     fetchPerso(url, {
         method: "GET"
     })
