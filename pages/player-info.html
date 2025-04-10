@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/player-info.css">
     <title>Player - ${usermame}</title>
 </head>
 <body>
@@ -14,8 +15,14 @@
             </div>
 
             <div class="player-profile-actions">
-                <button>Enviar um convite para time (provisório)</button> 
+                <button onclick="openUserCreatedTeamsCard()">Enviar um convite para time (provisório)</button> 
                 <!-- <button>Enviar um convite para campeonato</button>  -->
+
+                <div class="user-created-teams">
+                    <label>Seus times criados:</label>
+                    
+                    <!-- Edit com JS -->
+                </div>
             </div>
         </div>
         

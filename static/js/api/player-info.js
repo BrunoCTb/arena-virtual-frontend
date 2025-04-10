@@ -1,7 +1,8 @@
 function getPlayer() {
     let publicId = localStorage.getItem("playerProfileIdSelected");
     
-    localStorage.removeItem("playerProfileIdSelected")
+    // Ao dar reload não encontra nada
+    // localStorage.removeItem("playerProfileIdSelected")
 
     const url = 'http://localhost:8080/player/' + publicId; 
 
@@ -9,8 +10,6 @@ function getPlayer() {
         method: "GET"
     })
     .then(player => {
-        console.log(player);
-
         let playerCard = document.getElementsByClassName("player-card")[0];
 
         let playerCardContent = `<div class="div-player-image">
@@ -34,6 +33,34 @@ function getPlayer() {
         console.log(error);
     });
 }
+
+/* 
+    - Deve estar logado
+    - Deve ter ao menos um time criado
+    - Será mostrado um card para escolher qual time que criou quer convidar
+*/
+function openUserCreatedTeamsCard() {
+    const url = "http://localhost:8080/user/my/teams";
+
+    fetchPerso(url, {
+        method: "GET"
+    })
+    .then(teams => {
+        let div = document.getElementsByClassName("user-created-teams")[0];
+    
+        for (let i=0; i<teams.length; i++) {
+            html = `<div class="team1" >
+                        <span>Time 1</span>
+                </div>`;
+
+            div.innerHTML += html;
+        }
+
+        div.style.display = "block";
+    })
+    .catch(error => { console.log(error); })
+}
+
 
 getPlayer();
 
