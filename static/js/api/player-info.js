@@ -50,7 +50,7 @@ function openUserCreatedTeamsCard() {
     
         for (let i=0; i<teams.length; i++) {
             html = `<div class="team1" >
-                        <span>Time 1</span>
+                        <span>${teams[i].name}</span>
                 </div>`;
 
             div.innerHTML += html;
@@ -60,6 +60,7 @@ function openUserCreatedTeamsCard() {
     })
     .catch(error => { console.log(error); })
 }
+
 
 
 getPlayer();
