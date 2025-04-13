@@ -3,55 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/all-teams.css">
     <title>Times</title>
 </head>
 <body>
-    
+
     <main>
         <div class="teams-found">
             <div class="teams-apresentation">
                 <h1>Lista de campeonatos</h1>
-                <span>2 Encontrados</span>
+                <div class="teams-found-quantity">
+                    <span id="teams-quantity-found"></span>
+                    <span>encontrado(s)</span>
+                </div>
             </div>
 
             <!-- dinamicamente com backend -->
             <div class="list-of-teams">
-                <div class="team-card">
-                    <div class="tm-image">
-
-                    </div>
-                    <div class="tm-content">
-                        <div class="tm-title">
-                            <h3>${time title}</h3>
-                        </div>
-                        <div class="tm-info">
-                            <div>
-                                <span>Jogadores:</span>
-                                <span>${16}</span>
-                            </div>
-                            <div>
-                                <span>Aberto para convite:</span>
-                                <span>${ex}</span>
-                            </div>
-                            <div>
-                                <span>Campeonatos participando:</span>
-                                <span>${ex}</span>
-                            </div>
-                            <div>
-                                <span>Criador:</span>
-                                <span>${ex}</span>
-                            </div>
-                        </div>
-                        <div class="tm-actions">
-                            <button>Ver detalhes</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EDITAR COM JS -->
-
+                <!-- Edit com js -->
             </div>
         </div>
     </main>
+
+    <script src="/static/js/api/auth.js"></script>
+	<script src="../static/js/api/all-teams.js"></script>
 </body>
 </html>
