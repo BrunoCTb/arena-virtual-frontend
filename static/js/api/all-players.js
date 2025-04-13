@@ -29,7 +29,7 @@ function getAllPlayers(url) {
                                     </div>
                                 </div>
                                 <div class="player-actions">
-                                    <a onclick="getProfile(${p.publicId})" href="/pages/player-info.html">Ver perfil</a>
+                                    <a href="/pages/player-info.html?playerId=${p.publicId}">Ver perfil</a>
                                 </div>
                             </div>
                         </div>`
@@ -39,11 +39,6 @@ function getAllPlayers(url) {
     })
     .catch(error => { console.log(error); })
 }
-
-function getProfile(publicId) {
-    localStorage.setItem("playerProfileIdSelected", publicId)
-}
-
 
 getAllPlayers(apiUrl)
 

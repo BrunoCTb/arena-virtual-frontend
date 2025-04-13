@@ -1,9 +1,8 @@
 function getPlayer() {
-    let publicId = localStorage.getItem("playerProfileIdSelected");
+    // let publicId = localStorage.getItem("playerProfileIdSelected");
+    const urlParm = new URLSearchParams(window.location.search);
+    const publicId = urlParm.get("playerId")
     
-    // Ao dar reload não encontra nada
-    // localStorage.removeItem("playerProfileIdSelected")
-
     const url = 'http://localhost:8080/player/' + publicId; 
 
     fetchPerso(url, {
@@ -75,6 +74,7 @@ async function createInvite(e) {
     try {
         // pega a div mais proxima que tem o nome do time do elemento clicado
         let teamName = e.querySelector(".team-data-name").innerHTML;
+
         let playerId = localStorage.getItem("playerProfileIdSelected");
         
         let team = userCreatedTeams.get(teamName);

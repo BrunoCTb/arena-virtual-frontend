@@ -42,7 +42,7 @@ function getAllTeams() {
                                 </div>
                             </div>
                             <div class="tm-actions">
-                                <button>Ver detalhes</button>
+                                <a href="/pages/team-info.html?teamId=${t.id}">Ver detalhes</a>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,6 @@ function getAllTeams() {
     .catch(error => {
         console.log(error);
     })
-    
 }
 
 getAllTeams();
