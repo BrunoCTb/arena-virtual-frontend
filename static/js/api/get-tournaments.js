@@ -20,7 +20,12 @@ function setTournaments() {
     .then(data => {
         let tournaments = document.getElementsByClassName("list-of-tournaments")[0];
         
+        document.getElementById("tournaments-found-quantity").innerHTML = data.length;
+        
         for (let t of data) {
+            console.log(t);
+            
+
             var tournamentHTML = 
             `
             <div class="tournament">
@@ -46,7 +51,7 @@ function setTournaments() {
                 </div>
         
                 <div class="tournament-actions">
-                    <button>Ver detalhes</button>
+                    <a href="/pages/tournament-info.html?id=${t.id}">Ver detalhes</a>
                     <button>Solicitar participação</button>
                 </div>
             </div>
