@@ -25,7 +25,14 @@ function fetchPerso(url, options = {}) {
                 console.log("falha na resposta");
                 return;
             }
-            return response.json();
+            
+            return response.text().then(text => {
+                try {
+                    return JSON.parse(text);
+                } catch {
+                    return text;
+                }
+            });
         })
         .catch(error => {
             console.log("errooo" + error);
