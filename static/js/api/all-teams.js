@@ -13,8 +13,9 @@ function getAllTeams() {
 
         console.log(teamsList);
         
-        for (t of teams) {
-            html = `<div class="team-data">
+        for (const [index, t] of teams.entries()) {
+            
+            html = `<div class="team team${index}">
                     <div class="team-card">
                         <div class="tm-image">
                             <img src="#" alt="">
