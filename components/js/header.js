@@ -15,6 +15,7 @@ const NAV_BAR_CONTENT = `
             <a href="/pages/all-players.html"><li>Jogadores</li></a>
             <a href="/pages/all-teams.html""><li>Times</li></a>
             <a href="#"><li>Ranking</li></a>
+            <a href="/pages/profile/profile.html"><li>Perfil</li></a>
         </ul>
         
         <ul id="authFalse">
@@ -25,6 +26,7 @@ const NAV_BAR_CONTENT = `
         <ul id="authTrue">
             <span id="user-header-show">Email</span>
         </ul>
+
     </header>
 ` 
 
