@@ -1,6 +1,4 @@
 function getFormData() {
-    // nome, tag, description, image, invites e button de criacao
-
     let data = document.querySelectorAll(".getData");
     
     let image =  "test.png" // data[0].value;
@@ -12,15 +10,38 @@ function getFormData() {
     if (!data[4].checked) invite = false;
     
     
-    let json = {
+    let json = JSON.stringify({
         "name": title,
-        "tag": tag,
-        "description": description,
-        "image": image,
-        "invite": invite
-    }
+        "openToInvite": invite,
+        "logoUrl": image
+        // ATRIBUTOS PARA ADICIONAR DEPOIS
+        // "tag": tag,
+        // "description": description,
+    })
 
-    console.log(JSON.stringify(json));
+    createTeam(json);
+}
+
+async function createTeam(bodyData) {
+    console.log(bodyData);
     
+    try {
+        url = 'http://localhost:8080/team/create';
 
+        let resp = await fetchPerso(url, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: bodyData
+        })
+        
+        if (!resp) {
+            throw "erro ao criar time!";
+        }
+    } catch (error) {
+        console.log(error);
+        
+    }
 }
