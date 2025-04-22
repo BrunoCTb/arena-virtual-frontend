@@ -1,5 +1,23 @@
-function finishesCreation() {
-    console.log("creating...");
+async function finishesCreation(json) {
+    bodyData = JSON.stringify(json);
+
+    try {
+        const url = "http://localhost:8080/tournament/create"
+
+        let resp = await fetchPerso(url, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: bodyData
+        })
+
+        console.log("resp: "+ resp);
+
+    } catch (error) {
+        console.log("catch => " + error);
+    }
 }
 
 function getFormData() {
@@ -8,33 +26,44 @@ function getFormData() {
 
     let title = d1[0].value;
     let description = d1[1].value;
+
     let teamsTotal = d1[2].value;
-    let teamsMin = d1[3].value;
-    let teamsMax = d1[4].value;
+    let teamsMin, teamsMax;
 
-    let image = d1[5];
+    let dinamicTeamsDiv = document.getElementsByClassName("dynamic-teams-quantity")[0];
 
+    if (dinamicTeamsDiv.style.display == "none") {
+        teamsMin = teamsMax = teamsTotal;
+    } else {
+        teamsMin = d1[3].value;
+        teamsMax = d1[4].value;
+    }
+    
+    let image = "image.png";
+    
     let step3 = document.getElementsByClassName("level-three")[0];
     let d3 = step3.querySelectorAll(".getData3");
-
+    
     let online = true;
     if (!d3[0].checked) {
         online = false;
     }
-
+    
     let modality = d3[2].value;
 
     json = {
         "title": title,
-        "description": description,
         "modality": modality,
         "onlineMode": online, 
-        "minTeams": teamsMin, 
+        "totalTeams": teamsTotal,
+        "minTeams": teamsMin,
         "maxTeams": teamsMax,
         "totalTeams": teamsTotal,
         "imageRepresentationUrl": image,
-        "format": getFormats()
-    }
+        "format": null
+    };
+
+    finishesCreation(json)
 }
 
 function getFormats() { 
@@ -85,8 +114,6 @@ function changeLevel(event) {
             if (nextIndex < 0 || nextIndex >= arr.length) {
                 return; // assim causa o efeito de efeito nenhum
             }
-
-            // console.log(getFormData());
 
             // a etapa atual fica "display none" e a proxima aparece, que pode ser a anterior
             arr[i].style.display = "none";
