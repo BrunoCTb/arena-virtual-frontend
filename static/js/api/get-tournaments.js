@@ -51,7 +51,7 @@ function setTournaments() {
                 </div>
         
                 <div class="tournament-actions">
-                    <a href="/pages/tournament-info.html?id=${t.id}">Ver detalhes</a>
+                    <a href="/pages/tournament/tournament-info.html?id=${t.id}">Ver detalhes</a>
                     <button>Solicitar participação</button>
                 </div>
             </div>

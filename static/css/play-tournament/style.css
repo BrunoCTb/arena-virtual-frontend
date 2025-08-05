@@ -36,6 +36,7 @@ main {
 
 .tournament-started-title h1 {
     font-size: 1.8rem;
+    margin-bottom: 2%;
 }
 
 .tournament-started-title p {
@@ -46,6 +47,7 @@ main {
     display: flex;
     justify-content: space-between;
     gap: 5px;
+    margin-top: 2%;
 }
 
 .t-short {
