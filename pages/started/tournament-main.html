@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/components/css/header.css">
+	<link rel="stylesheet" href="/components/css/footer.css">
+    <link rel="stylesheet" href="/static/css/play-tournament/style.css">
+    <title>Nome do Campeonato</title>
+</head>
+<body>
+    
+    <div id="header"></div>
+
+     <main>
+        <div class="tournament-started-card">
+
+            <div class="tournament-fixed">
+
+                <div class="tournament-logo">
+                    <!-- <img src="/static/images/icons/github.png" alt=""> -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/3891/3891808.png" alt="">
+                </div>
+
+                <div class="tournament-started-main-info">
+                    <div class="tournament-started-title">
+                        <h1>{Torneio brabo}</h1>
+                        <p>{Description lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam at doloremque
+                            incidunt.}</p>
+                    </div>
+
+                    <div class="tournament-started-short-info">
+                        <div class="t-short tourmanent-creator">
+                            <label>Criador:</label>
+                            <span>{User123}</span>
+                        </div>
+
+                        <div class="t-short tourmanent-category">
+                            <label>Categoria:</label>
+                            <span>{category}</span>
+                        </div>
+
+                        <div class="t-short tourmanent-teams-size">
+                            <label>Times:</label>
+                            <span>{teamsSize}</span>
+                        </div>
+
+                        <div class="t-short tourmanent-date">
+                            <label>Data:</label>
+                            <span>{Inicio} - {Fim}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tournament-menu-option">
+                <div class="menu-selector">
+                    <span>Visão Geral</span>
+                    <span>Próximas partidas</span>
+                    <span>Resultados</span>
+                </div>
+
+                <div class="tournament-menu-overview">
+                    <div class="tourmanent-menu-formats">
+                        <div class="tourmanent-format">
+                            <span>Format 1</span>
+                            <div>
+                                <img src="https://cdn-icons-png.flaticon.com/512/54/54785.png" alt="">
+                            </div>
+                        </div>
+                        <div class="tourmanent-format">
+                            <span>Format 2</span>
+                            <div>
+                                <img src="https://cdn-icons-png.flaticon.com/512/54/54785.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tourmanent-menu-teams">
+                        <h2>Times participando</h2>
+
+                        <div class="tournament-all-teams">
+                            <div class="tourmanent-menu-partcipant-team">{Time 1}</div>
+                            <div class="tourmanent-menu-partcipant-team">{Time 2}</div>
+                            <div class="tourmanent-menu-partcipant-team">{Time 3}</div>
+                            <div class="tourmanent-menu-partcipant-team">{Time 4}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tournament-menu-next-matches">
+                    <h3>Próximas partidas</h3>
+
+                    <div class="tourmanent-all-next-matches">
+                        <div class="tourmanent-next-match">{Match1}</div>
+                        <div class="tourmanent-next-match">{Match1}</div>
+                    </div>
+                </div>
+
+                <div class="tournament-menu-played-matches">
+                    <h3>Partidas finalizadas</h3>
+
+                    <div class="tournament-all-played-matches">
+                        <div class="tournament-result-match">{Result1}</div>
+                        <div class="tournament-result-match">{Result2}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="/static/js/api/auth.js"></script>
+	<script src="/components/js/header.js"></script>
+	<script src="/components/js/footer.js"></script>    
+</body>
+</html>

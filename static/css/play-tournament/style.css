@@ -1,0 +1,138 @@
+main {
+    width: 80vw;
+    margin: 5vh auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    /* font-family: 'Fredoka'; */
+}
+
+/* INFOs GERAIS */
+
+.tournament-fixed {
+    border: 1px solid #c2c2c2;
+    border-radius: 10px;
+}
+
+.tournament-logo {
+    background: linear-gradient(179deg,rgba(176, 215, 255, 1) 0%, rgba(255, 255, 255, 1) 97%);
+    border-radius: 10px;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tournament-logo img {
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.tournament-started-main-info {
+    padding: 1% 2%;
+}
+
+.tournament-started-title h1 {
+    font-size: 1.8rem;
+}
+
+.tournament-started-title p {
+    color: #37373777;
+}
+
+.tournament-started-short-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.t-short {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.t-short label {
+    color: #37373777;
+}
+
+/* MENU DE ESCOLHA DE OPCOES */
+.tournament-menu-option > .menu-selector {
+    background-color: #bababa47;
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    margin: 3% 0;
+    cursor: pointer;
+}
+
+.menu-selector span {
+    /* background-color: yellow; */
+    width: 30%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.menu-selector span:first-child {
+    background-color: #bababa47;
+    border-radius: 10px;
+}
+
+.tourmanent-menu-formats {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tourmanent-format {
+    background-color: #bababa47;
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.tourmanent-format:hover {
+    background-color: #77777747;
+}
+
+.tourmanent-format span {
+    font-weight: bold;
+}
+
+.tourmanent-format img {
+    width: 10px;
+}
+
+.tourmanent-menu-teams {
+    margin-top: 3%;
+}
+
+.tourmanent-menu-teams h2 {
+    font-size: 1.5em;
+}
+
+.tournament-all-teams {
+    /* background-color: rebeccapurple; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Exibe 4 itens por linha */
+    gap: 10px; /* Espaço entre os itens */  
+}
+
+.tourmanent-menu-partcipant-team {
+    height: 200px;
+    border: 1px solid #000;
+}
+
+/* DEFAULT */
+.tournament-menu-next-matches {
+    display: none;
+}
+
+.tournament-menu-played-matches {
+    display: none;
+}
