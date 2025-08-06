@@ -13,7 +13,8 @@ async function finishesCreation(json) {
             body: bodyData
         })
 
-        console.log("resp: "+ resp);
+        alert("Campeonato criado com sucesso!");
+        window.location.href = "/pages/"
 
     } catch (error) {
         console.log("catch => " + error);

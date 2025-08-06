@@ -36,6 +36,9 @@ async function createTeam(bodyData) {
             method: "POST",
             body: bodyData
         })
+
+        alert("Time criado com sucesso!");
+        window.location.href = "/pages/"
         
         if (!resp) {
             throw "erro ao criar time!";
