@@ -75,7 +75,8 @@ async function createInvite(e) {
         // pega a div mais proxima que tem o nome do time do elemento clicado
         let teamName = e.querySelector(".team-data-name").innerHTML;
 
-        let playerId = localStorage.getItem("playerProfileIdSelected");
+        let urlParam = new URLSearchParams(window.location.search);
+        let playerId = urlParam.get("playerId");
         
         let team = userCreatedTeams.get(teamName);
         
@@ -86,6 +87,8 @@ async function createInvite(e) {
             "playerPublicId": playerId
         })
 
+        console.log("----- " + bodyData);
+
         let resp = await fetchPerso(url, {
             headers: {
                 "Accept": "application/json",
@@ -94,6 +97,9 @@ async function createInvite(e) {
             method: "POST",
             body: bodyData
         })
+
+        console.log("??  " + resp);
+        
 
         if(!resp) {
             console.log("ERRO!");

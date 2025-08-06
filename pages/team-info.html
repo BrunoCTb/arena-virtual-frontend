@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/components/css/header.css">
+	<link rel="stylesheet" href="/components/css/footer.css">
     <title>Time - ${time}</title>
 </head>
 <body>
+    <div id="header"></div>
+    
     <main>
         <div class="team-main-card">
             <div class="team-image">
@@ -24,22 +28,15 @@
         <div class="team-others-info">
             <div class="t-players">
                 <h2>Jogadores do time</h2>
-                <div class="t-list-of-players">
-                    <span>{$15}</span>
+                <div class="t-players-total-found">
+                    <span id="t-players-total-value"></span>
                     <span>encontrados</span>
+                </div>
+                <div class="t-list-of-players">
 
                     <!-- JS loop -->
-                    <div class="t-player-found">
-                        <div class="t-player-img">
-                            <img src="#" alt="">
-                        </div>
-                        <div class="t-player-data">
-
-                        </div>
-                        <div class="t-player-actions">
-                            <a href="/pages/player-info.html">Ver perfil</a>
-                        </div>
-                    </div>
+                    
+                    
                     
                 </div>
 
@@ -55,7 +52,13 @@
         </div>
     </main>
 
+    <div id="footer"></div>
+
     <script src="/static/js/api/auth.js"></script>
+	<script src="/components/js/header.js"></script>
+	<script src="/components/js/footer.js"></script>
     <script src="/static/js/api/team-info.js"></script>
+
+
 </body>
 </html>
