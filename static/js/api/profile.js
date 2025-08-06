@@ -6,7 +6,7 @@ function setProfileArea() {
 		method: "GET"
 	})
 		.then(user => {
-			console.log(user);
+			console.log("......- " + user);
 
 			let profileArea = document.getElementsByClassName("profile-main-info")[0];
 			profileArea.innerHTML = "";
