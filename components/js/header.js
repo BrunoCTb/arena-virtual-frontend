@@ -31,6 +31,7 @@ const NAV_BAR_CONTENT = `
             <ul class="auth-options-card">
                 <li><a href="/pages/profile/profile.html" id="header-profile-link">Perfil</a></li>
                 <li><a href="/pages/profile/invites.html" id="header-invite-link">Convites</a></li>
+                <li><a href="/pages/logout.html" id="header-invite-link">Sair</a></li>
             </ul>
         </ul>
         
