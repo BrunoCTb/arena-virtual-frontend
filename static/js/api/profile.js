@@ -89,7 +89,7 @@ function setCreatedTournaments() {
 					<a href="/pages/tournament/tournament-info.html?id=${t.id}">Ver detalhes</a>
 				</div>
 			`;
-			createdTeamsDiv.innerHTML += html;
+			createdTournamentsDiv.innerHTML += html;
 		}
 	})
 	.catch(error => {
