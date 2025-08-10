@@ -1,0 +1,124 @@
+main {
+    font-family: 'Fredoka';
+}
+
+.profile-area {
+    width: 80%;
+    margin: 8vh auto;
+}
+
+.profile-main-info {
+    display: flex;
+    gap: 5px;
+}
+
+.profile-image {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image img {
+    border: 2px solid #000;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 100%;
+}
+
+#p-username {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#p-firstName {
+    color: #00000072;
+    font-size: 18px;
+}
+
+.profile-created {
+    margin-top: 10px;
+}
+
+/* MENU DE CONTEUDO */
+.profile-menu-options {
+    color: #000000d5;
+    background-color: #e0e0e0cf;
+    width: calc(100% - 10px);
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.profile-menu-options span {
+    width: calc(30% - 20px);
+    text-align: center;
+    padding: 10px;
+}
+
+.profile-menu-options span.active {
+    background-color: #fff;
+}
+
+/* DEFAULT - NONE */
+.profile-selected-content > div {
+    display: none;
+}
+
+.profile-selected-content > .active {
+    display: flex;
+}
+/* ======================= */
+
+/* PROFILE -> TOURNAMENT/TEAM */
+.profile-tournaments, .profile-teams {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-tournaments h3, .profile-teams h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.profile-tournaments > div, .profile-teams > div {
+    width: calc(45% - 2%);
+    border: 1px solid #93939360;
+    padding: 1%;
+    border-radius: 8px;
+}
+
+.created-tourmanent, .created-team {
+    margin-top: 5%;
+    border: 1px solid #93939360;
+    padding: 2% 3%;
+    width: calc(100 - 10px);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.created-tourmanent > span, .created-team > span {
+    width: 60%;
+}
+
+.created-tourmanent > a, .created-team > a {
+    border: 1px solid #000;
+    color: #000;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.8em;
+}
+
+.created-tourmanent > a:hover, .created-team > a:hover {
+    text-decoration: underline;
+}
+
+/* PROFILE -> MATCHES */

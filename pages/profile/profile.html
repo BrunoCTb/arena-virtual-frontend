@@ -1,50 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/components/css/header.css">
+	<link rel="stylesheet" href="/components/css/footer.css">
+	<link rel="stylesheet" href="/static/css/profile/profile.css">
     <title>Perfil</title>
 </head>
-
 <body>
+    <div id="header"></div>
 
     <main>
         <div class="profile-area">
             <div class="profile-main-info">
-                <!-- Edit com JS     -->
+                <!-- JS -->
             </div>
 
-            <div class="profile-participant">
+            <div class="profile-menu-options">
+                <span data-target="profile-tournaments">Campeonatos</span>
+                <span data-target="profile-teams">Times</span>
+                <span data-target="profile-matches">Partidas</span>
+            </div>
 
-                <div class="profile-tournaments">
+            <div class="profile-selected-content">
+                <div class="profile-tournaments active">
                     <div class="profile-created-tournaments">
                         <h3>Campenatos criados</h3>
+
+                        <div class="created-tournaments-list">
+                            <!-- JS -->
+                        </div>
                     </div>
                     <div class="profile-playing-tournaments">                        
                         <h3>Campeonatos que está disputando</h3>
+                        
+                        <div class="playing-tournaments-list">
+                            <!-- JS -->
+                        </div>
                     </div>
                 </div>
-
+                
                 <div class="profile-teams">
                     <div class="profile-created-teams">
                         <h3>Times criados</h3>
+                        
+                        <div class="created-teams-list">
+                            <!-- JS -->
+                        </div>
                     </div>
                     <div class="profile-playing-teams">
                         <h3>Times que participa</h3>
+                        
+                        <div class="playing-teams-list">
+                            <!-- JS -->
+                        </div>
                     </div>
                 </div>
 
                 <div class="profile-matches">
+                    <!-- Em breve... -->
                     <div class="profile-next-matches">
-                        <!-- Em breve... -->
+                        <span>Nenhuma partida a ser jogada</span>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <div id="footer"></div>
+
     <script src="/static/js/api/auth.js"></script>
+    <script src="/components/js/header.js"></script>
+	<script src="/components/js/footer.js"></script>    
     <script src="/static/js/api/profile.js"></script>
 </body>
 </html>

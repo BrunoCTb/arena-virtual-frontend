@@ -17,7 +17,7 @@ function fetchPerso(url, options = {}) {
             // ira remover o token caso tenha e redirecionar para login
             if (response.status == 403) { 
                 localStorage.removeItem("authToken");
-                window.location.href = "login.html";
+                window.location.href = "/pages/login.html";
                 return;   
             }
 
