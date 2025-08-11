@@ -14,22 +14,23 @@ function setReceivedInvite(username) {
 		}
 		
 		for (let received of data) {
-			let inviteHTML = let = `<div class="received-invite">
-			<div class="received-invite-content">
-			<div class="received-invite-data">
-					<h2>Solicitação do ${received.invitedBy.username}</h2>
-					<span>Recebido em ${received.createdAt}</span>
-					<span>Time: ${received.teamTarget.name}</span>
-				</div>
-				<div class="received-invite-status">
-				<span>${received.inviteStatus}</span>
-				</div>
+			let inviteHTML = let = `
+			<div class="received-invite">
+				<div class="received-invite-content">
+					<div class="received-invite-data">
+						<h2 class="received-receivedTo">Solicitação do ${received.invitedBy.username}</h2>
+						<span class="received-receivedAt">Recebido em ${received.createdAt}</span>
+						<span class="received-target">Time: ${received.teamTarget.name}</span>
+					</div>
+					<div class="received-invite-status">
+						<span>${received.inviteStatus}</span>
+					</div>
 				</div>
 				<div class="received-invite-actions">
-				<button>Aceitar</button>
-					<button>Rejeitar</button>
+					<button class="received-accept-invite">Aceitar</button>
+					<button class="received-reject-invite">Rejeitar</button>
 				</div>
-				</div>`
+			</div>`;
 				
 			receivedInvitations.innerHTML += inviteHTML;
 		}
@@ -52,12 +53,13 @@ function setSentInvite(username) {
 		}
 		
 		for (let invite of data) {
-			let inviteHTML = let = `<div class="sent-invite">
+			let inviteHTML = let = `
+			<div class="sent-invite">
 				<div class="sent-invite-content">
 					<div class="sent-invite-data">
-					<h2>Convite para ${invite.invitedTarget.username}</h2>
-						<span>Enviado em ${invite.createdAt}</span>
-						<span>Time: ${invite.teamTarget.name}</span>
+						<h2 class="sent-sentTo">Convite para ${invite.invitedTarget.username}</h2>
+						<span class="sent-sentAt">Enviado em ${invite.createdAt}</span>
+						<span class="sent-target">Time: ${invite.teamTarget.name}</span>
 					</div>
 					<div class="sent-invite-status">
 						<span>${invite.inviteStatus}</span>
@@ -66,9 +68,9 @@ function setSentInvite(username) {
 				<div class="sent-invite-actions">
 					<button>Cancelar</button>
 				</div>
-				</div>`
+			</div>`;
 
-				sentInvitations.innerHTML += inviteHTML;
+			sentInvitations.innerHTML += inviteHTML;
 		}
 	})
 }
@@ -88,4 +90,25 @@ function setInvites() {
 	})
 }
 
+function selectEventsInvitesMenu() {
+	const menuItems = document.querySelectorAll('.invites-menu-select span');
+	const sections = document.querySelectorAll('.all-invites > div');
+
+	menuItems.forEach(item => {
+		item.addEventListener('click', () => {
+			// Remove "active" de todos os menus e seções
+			menuItems.forEach(i => i.classList.remove('active'));
+			sections.forEach(s => s.classList.remove('active'));
+
+			// Adiciona "active" no menu clicado
+			item.classList.add('active');
+
+			// Ativa a seção correspondente
+			const targetClass = item.getAttribute('data-target');
+			document.querySelector(`.${targetClass}`).classList.add('active');
+		});
+	});
+}
+
 setInvites();
+selectEventsInvitesMenu();

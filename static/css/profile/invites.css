@@ -1,0 +1,111 @@
+main {
+    font-family: 'Fredoka';
+    display: flex;
+    justify-content: center;
+}
+
+.invites-area {
+    width: 80%;
+    margin: 4%;
+}
+
+.invites-menu-select {
+    background-color: #e0e0e0cf;
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 5px
+}
+
+.invites-menu-select span {
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+}
+
+.invites-menu-select span.active {
+    background-color: #fff;
+}
+
+
+/* DEFAULT */
+.all-invites > div {
+    display: none;
+}
+
+.all-invites > div.active {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+}
+/* --------------- */
+
+
+.sent-invite, .received-invite{
+    border: 1px solid #e0e0e0cf;
+}
+
+.sent-invite-content, .received-invite-content {
+    width: calc(100% - 40px);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sent-invite-data, .received-invite-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sent-invite-data .sent-sentTo, .received-invite-data .received-receivedTo {  
+    font-weight: 500;
+    font-size: 1.8em
+}
+
+.sent-invite-data .sent-sentAt, .received-invite-data .received-receivedAt {
+    font-size: 1em;
+    color: #00000058;
+}
+
+.sent-invite-data .sent-target, .received-invite-data .received-target {
+    font-size: 1.3em;
+}
+
+/* STATUS */
+.sent-invite-status span, .received-invite-status span {
+    background-color: #56b9ff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+/* ACTION */
+.sent-invite-actions, .received-invite-actions {
+    background-color: #ebeaeacf;
+    padding: 20px;
+}
+
+.sent-invite-actions button, .received-invite-actions button {
+    background-color: #d91f1f;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sent-invite-actions button:hover, .received-reject-invite:hover {
+    background-color: #d91f1f97;
+}
+
+.received-accept-invite {
+    background-color: #23c923 !important;
+}
+
+.received-accept-invite:hover {
+    background-color: #23c923ac !important;
+}

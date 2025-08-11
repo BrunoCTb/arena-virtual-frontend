@@ -5,34 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/components/css/header.css">
 	<link rel="stylesheet" href="/components/css/footer.css">
+	<link rel="stylesheet" href="/static/css/profile/invites.css">
     <title>Convites - times</title>
 </head>
 <body>
     <div id="header"></div>
     
     <main>
-        <h1>Convites</h1>
+        <div class="invites-area">
+            <h1>Convites</h1>
 
-        <!-- <div>
-            <button onclick="setReceivedInvite()">Recebidos</button>
-            <button onclick="setSentInvite()">Enviados</button>
-        </div> -->
-
-        <div class="team-invites">
-            <div class="received-invitations">
-                <h2>Recebidos</h2>
-                <!-- ... -->
-                
-                <span id="not-found-received-invitations"></span>
+            <div class="invites-menu-select">
+                <span class="active" data-target="received-invitations">Recebidos</span>
+                <span data-target="sent-invitations">Enviados</span>
             </div>
 
-            <br><br><hr><br><br>
 
-            <div class="sent-invitations">
-                <h2>Enviados</h2>
-                <!-- ... -->
+            <div class="all-invites">
+                <div class="received-invitations active">
+                    <!-- ... -->
+                    
+                    <span id="not-found-received-invitations"></span>
+                </div>
 
-                <span id="not-found-sent-invitations"></span>
+                <div class="sent-invitations">
+                    <!-- ... -->
+
+                    <span id="not-found-sent-invitations"></span>
+                </div>
             </div>
         </div>
     </main>
@@ -40,10 +40,7 @@
     <div id="footer"></div>
 
     <script src="/static/js/api/auth.js"></script>
-
     <script src="/static/js/api/invite.js"></script>
-
-	
 	<script src="/components/js/header.js"></script>
 	<script src="/components/js/footer.js"></script>
 </body>
