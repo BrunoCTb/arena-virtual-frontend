@@ -12,13 +12,13 @@ function setReceivedInvite(username) {
 		let receivedInvitations = document.getElementsByClassName("received-invitations")[0];
 
 		if (data.length == 0) {
-			document.getElementById("not-found-received-invitations").innerHTML = "Nenhum convite enviado no momento"
+			document.getElementById("not-found-received-invitations").innerHTML = "Nenhum convite recebido no momento"
 			return;
 		}
 		
 		for (let invite of data) {
 			let inviteHTML = let = `
-			<div class="received-invite">
+			<div class="received-invite"S>
 				<div class="received-invite-content">
 					<div class="received-invite-data">
 						<h2 class="received-receivedTo">Solicitação do ${invite.invitedBy.username}</h2>
@@ -30,14 +30,26 @@ function setReceivedInvite(username) {
 					</div>
 				</div>
 				<div class="received-invite-actions">
-					<button class="received-accept-invite">Aceitar</button>
-					<button class="received-reject-invite">Rejeitar</button>
+					<button class="received-accept-invite" data-invite-id="${invite.id}">Aceitar</button>
+					<button class="received-reject-invite" data-invite-id="${invite.id}">Rejeitar</button>
 				</div>
 			</div>`;
 
-			receivedInvitesVar.push(invite);
-
 			receivedInvitations.innerHTML += inviteHTML;
+
+			document.querySelectorAll(".received-reject-invite").forEach(btn => {
+			btn.addEventListener("click", () => {
+			const inviteId = btn.dataset.inviteId;
+			cancelInvite(inviteId); 
+				})
+			});
+
+			document.querySelectorAll(".received-accept-invite").forEach(btn => {
+			btn.addEventListener("click", () => {
+			const inviteId = btn.dataset.inviteId;
+			acceptInvite(inviteId);
+				});
+			});
 		}
 	})
 }
@@ -83,8 +95,8 @@ function setSentInvite(username) {
 			btn.addEventListener("click", () => {
 			const inviteId = btn.dataset.inviteId;
 			cancelInvite(inviteId);
-    });
-});
+			});
+		});
 
 		}
 	})
@@ -142,15 +154,37 @@ async function cancelInvite(inviteId) {
             body: bodyData
         })
 
-		alert("Convite cancelado")
+		alert("Convite removido")
 		window.location.reload();
     } catch (error) {
         console.log("catch => " + error);
     }
 }
 
-function acceptInvite() {
+async function acceptInvite(inviteId) {
+	bodyData = JSON.stringify({
+		"acceptInvite": true
+	});
+	
+	try {
+		url = `http://localhost:8080/invite/${inviteId}`;
+
+        let resp = await fetchPerso(url, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: bodyData
+        })
+
+		alert("Convite aceito")
+		window.location.reload();
+    } catch (error) {
+        console.log("catch => " + error);
+    }
 }
+
 
 setInvites();
 selectEventsInvitesMenu();
