@@ -1,3 +1,6 @@
+let receivedInvitesVar = [];
+let sentInvitesVar = [];
+
 // MOSTRAR OS CONVITES RECEBIDOS NO HTML
 function setReceivedInvite(username) {
 	let receivedUrl = `http://localhost:8080/${username}/invites/received`;
@@ -13,17 +16,17 @@ function setReceivedInvite(username) {
 			return;
 		}
 		
-		for (let received of data) {
+		for (let invite of data) {
 			let inviteHTML = let = `
 			<div class="received-invite">
 				<div class="received-invite-content">
 					<div class="received-invite-data">
-						<h2 class="received-receivedTo">Solicitação do ${received.invitedBy.username}</h2>
-						<span class="received-receivedAt">Recebido em ${received.createdAt}</span>
-						<span class="received-target">Time: ${received.teamTarget.name}</span>
+						<h2 class="received-receivedTo">Solicitação do ${invite.invitedBy.username}</h2>
+						<span class="received-receivedAt">Recebido em ${invite.createdAt}</span>
+						<span class="received-target">Time: ${invite.teamTarget.name}</span>
 					</div>
 					<div class="received-invite-status">
-						<span>${received.inviteStatus}</span>
+						<span>${invite.inviteStatus}</span>
 					</div>
 				</div>
 				<div class="received-invite-actions">
@@ -31,7 +34,9 @@ function setReceivedInvite(username) {
 					<button class="received-reject-invite">Rejeitar</button>
 				</div>
 			</div>`;
-				
+
+			receivedInvitesVar.push(invite);
+
 			receivedInvitations.innerHTML += inviteHTML;
 		}
 	})
@@ -66,11 +71,21 @@ function setSentInvite(username) {
 					</div>
 				</div>
 				<div class="sent-invite-actions">
-					<button>Cancelar</button>
+					<button class="cancel-btn" data-invite-id="${invite.id}">Cancelar</button>
 				</div>
 			</div>`;
 
+			sentInvitesVar.push(invite);
+
 			sentInvitations.innerHTML += inviteHTML;
+
+			document.querySelectorAll(".cancel-btn").forEach(btn => {
+			btn.addEventListener("click", () => {
+			const inviteId = btn.dataset.inviteId;
+			cancelInvite(inviteId);
+    });
+});
+
 		}
 	})
 }
@@ -108,6 +123,33 @@ function selectEventsInvitesMenu() {
 			document.querySelector(`.${targetClass}`).classList.add('active');
 		});
 	});
+}
+
+async function cancelInvite(inviteId) {
+	bodyData = JSON.stringify({
+		"acceptInvite": false
+	});
+	
+	try {
+		url = `http://localhost:8080/invite/${inviteId}`;
+
+        let resp = await fetchPerso(url, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: bodyData
+        })
+
+		alert("Convite cancelado")
+		window.location.reload();
+    } catch (error) {
+        console.log("catch => " + error);
+    }
+}
+
+function acceptInvite() {
 }
 
 setInvites();
