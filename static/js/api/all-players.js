@@ -4,6 +4,7 @@ function getAllPlayers(url) {
     fetchPerso(url, {
         method: "GET"
     })
+    .then(resp => resp.json())   // força a ler como JSON
     .then(players => {
         let playerList = document.getElementsByClassName("list-of-players")[0];
         console.log(players);
@@ -17,6 +18,7 @@ function getAllPlayers(url) {
                             <div class="player-data">
                                 <div class="player-info">
                                     <h3>${p.username}</h3>
+                                    <h4>--> ${p.user.username}</h4>
                                     <div class="player-current">
                                         <div class="player-tournaments">
                                             <span>null</span>
