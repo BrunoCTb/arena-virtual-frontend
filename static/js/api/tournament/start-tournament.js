@@ -7,6 +7,7 @@ function getTournamentData() {
     fetchPerso(url, {
         method: "GET"
     })
+    .then(t => t.json())
     .then(t => {
         topContent = document.getElementsByClassName("tournament-started-main-info")[0];
         topContent.innerHTML = "";
@@ -55,31 +56,34 @@ function getTeams() {
 
     const teamsUrl = `http://localhost:8080/tournament/${tournamentId}/findteams`;
 
+    console.log("url: " + teamsUrl);
+    
+
     fetchPerso(teamsUrl, {
         method: "GET"
     })
-    .then(t => {
+    .then(team => team.json())
+    .then(team => {
+        console.log("yaa");
+        
         let teamsDiv = document.getElementsByClassName("tournament-all-teams")[0];
         teamsDiv.innerHTML = "";
-        console.log(t);
 
-        console.log("---- " +!t);
-        
-        if(!t) {
+        if(team.length == 0) {
             const notFoundText = "Nenhum time encontrado"
             const html = `<span>${notFoundText}</span>`;
             teamsDiv.innerHTML += html;
             return;
         }
         
-        for (let e of t) {
+        for (let t of team) {
             const html = `<div class="tourmanent-menu-partcipant-team"><h4>${t.name}</h4></div>`
             teamsDiv.innerHTML += html
         }
         
     })
     .catch(error => {
-        console.log(error);
+        console.log("_________ " + error);
     })
 }
 

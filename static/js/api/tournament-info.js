@@ -7,6 +7,7 @@ function getTournament() {
     fetchPerso(url, {
         method: "GET"
     })
+    // .then(t => t.json())
     .then(t => {
         let mainCard = document.getElementsByClassName("tournament-main-card")[0];
         mainCard.innerHTML = "";

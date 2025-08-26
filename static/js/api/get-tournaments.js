@@ -1,22 +1,11 @@
-const api_url = "http://localhost:8080/tournament/all"
-
-function getTournaments() {
-    fetchPerso(api_url, {
-        method: "GET"
-    })
-    .then(data => data)
-    .catch(error => console.error("Erro: ", error));
-}
-
-// getTournaments();
-
 // RECEBE OS TORNEIOS DISPONIVEIS DO BACKEND E MODIFICA O HTML
 function setTournaments() { 
-    // const url = "http://localhost:8080/tournament/all";
+    const api_url = "http://localhost:8080/tournament/all"
 
     fetchPerso(api_url, {
         method: "GET"
     })
+    .then(data => data.json())
     .then(data => {
         let tournaments = document.getElementsByClassName("list-of-tournaments")[0];
         
@@ -59,7 +48,6 @@ function setTournaments() {
             `
             tournaments.innerHTML += tournamentHTML;
         }
-        
 
     })
     .catch(error => console.error("Erro: ", error));

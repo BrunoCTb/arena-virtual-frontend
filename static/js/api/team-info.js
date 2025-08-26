@@ -7,9 +7,9 @@ function getTeam() {
     fetchPerso(url, {
         method: "GET"
     })
+    .then(team => team.json())
     .then(team => {
         console.log(team);
-        
 
         let teamData = document.getElementsByClassName("team-data")[0];
         teamData.innerHTML = "";
@@ -44,6 +44,7 @@ function getPlayersFromTeam() {
     fetchPerso(url, {
         method: "GET"
     })
+    .then(players => players.json())
     .then(players => {
         let totalPlayersCount = document.getElementById("t-players-total-value");
         let playersListDiv = document.getElementsByClassName("t-list-of-players")[0];

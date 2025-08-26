@@ -4,7 +4,7 @@ function getAllPlayers(url) {
     fetchPerso(url, {
         method: "GET"
     })
-    .then(resp => resp.json())   // força a ler como JSON
+    .then(players => players.json())
     .then(players => {
         let playerList = document.getElementsByClassName("list-of-players")[0];
         console.log(players);

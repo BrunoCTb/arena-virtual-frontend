@@ -4,39 +4,40 @@ function setProfileArea() {
 	fetchPerso(url, {
 		method: "GET"
 	})
-		.then(user => {
-			console.log("......- " + user);
+	.then(user => user.json())
+	.then(user => {
+		console.log("......- " + user);
 
-			let profileArea = document.getElementsByClassName("profile-main-info")[0];
-			profileArea.innerHTML = "";
+		let profileArea = document.getElementsByClassName("profile-main-info")[0];
+		profileArea.innerHTML = "";
 
-			html = `<div class="profile-image">
-						<img src="#" alt="">
-					</div>
+		html = `<div class="profile-image">
+					<img src="#" alt="">
+				</div>
 
-					<div class="profile-data">
-						<div class="profile-name-info">
-							<div>
-								<span id="p-username">${user.username}</span>
-							</div>
-							<div>
-								<span id="p-firstName">${user.firstName}</spsan>
-							</div>
+				<div class="profile-data">
+					<div class="profile-name-info">
+						<div>
+							<span id="p-username">${user.username}</span>
 						</div>
-
-						<div class="profile-created">
-							<span>Desde:</span>
-							<span id="p-created">${null}</span>
+						<div>
+							<span id="p-firstName">${user.firstName}</spsan>
 						</div>
 					</div>
-					`;
 
-			profileArea.innerHTML += html;
+					<div class="profile-created">
+						<span>Desde:</span>
+						<span id="p-created">${null}</span>
+					</div>
+				</div>
+				`;
 
-		})
-		.catch(error => {
-			console.log(error);
-		})
+		profileArea.innerHTML += html;
+
+	})
+	.catch(error => {
+		console.log(error);
+	})
 }
 
 function setCreatedTeams() {
@@ -45,6 +46,7 @@ function setCreatedTeams() {
 	fetchPerso(url, {
 		method: "GET"
 	})
+	.then(teams => teams.json())
 	.then(teams => {
 		let createdTeamsDiv = document.getElementsByClassName("profile-created-teams")[0];
 		
@@ -74,6 +76,7 @@ function setCreatedTournaments() {
 	fetchPerso(url, {
 		method: "GET"
 	})
+	.then(tournaments => tournaments.json())
 	.then(tournaments => {
 		let createdTournamentsDiv = document.getElementsByClassName("created-tournaments-list")[0];
 		

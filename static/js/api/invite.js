@@ -1,6 +1,3 @@
-let receivedInvitesVar = [];
-let sentInvitesVar = [];
-
 // MOSTRAR OS CONVITES RECEBIDOS NO HTML
 function setReceivedInvite(username) {
 	let receivedUrl = `http://localhost:8080/${username}/invites/received`;
@@ -8,6 +5,7 @@ function setReceivedInvite(username) {
 	fetchPerso(receivedUrl, {
 		method: "GET"
 	})
+	.then(data => data.json())
 	.then(data => {
 		let receivedInvitations = document.getElementsByClassName("received-invitations")[0];
 
@@ -61,6 +59,7 @@ function setSentInvite(username) {
 	fetchPerso(sentUrl, {
 		method: "GET"
 	})
+	.then(data => data.json())
 	.then(data => {
 		let sentInvitations = document.getElementsByClassName("sent-invitations")[0];
 

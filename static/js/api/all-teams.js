@@ -4,6 +4,7 @@ function getAllTeams() {
     fetchPerso(apiUrl, {
         method: "GET"
     })
+    .then(teams => teams.json())
     .then(teams => {
         // quantidade encontrada
         document.getElementById("teams-quantity-found").innerHTML = teams.length;
@@ -14,7 +15,6 @@ function getAllTeams() {
         console.log(teamsList);
         
         for (const [index, t] of teams.entries()) {
-            
             html = `<div class="team team${index}">
                     <div class="team-card">
                         <div class="tm-image">
@@ -51,7 +51,6 @@ function getAllTeams() {
 
             teamsList.innerHTML += html;
         }
-
     })
     .catch(error => {
         console.log(error);
