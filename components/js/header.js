@@ -73,6 +73,7 @@ function updateHeader() {
     fetchPerso(api_url, {
         method: "GET",
     })
+    .then(data => data.json())
     .then(data => {
         const profileMsg = "Olá!";
         if (data) {
