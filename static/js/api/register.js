@@ -31,6 +31,8 @@ document.getElementById("register-form").addEventListener("submit", async functi
         });
 
         console.log("enviado | " + response);
+
+        window.location.href = "/pages/login.html"
     } catch (error) {
         console.log("erro | ", error);
     }

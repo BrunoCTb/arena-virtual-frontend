@@ -107,6 +107,7 @@ function setInvites() {
 	fetchPerso(url, {
 		method: "GET"
 	})
+	.then(user => user.json)
 	.then(user => {
 		setReceivedInvite(user.username);
 		setSentInvite(user.username);

@@ -8,6 +8,7 @@ function getPlayer() {
     fetchPerso(url, {
         method: "GET"
     })
+    .then(player => player.json())
     .then(player => {
         let playerCard = document.getElementsByClassName("player-card")[0];
 
@@ -48,6 +49,7 @@ function openUserCreatedTeamsCard() {
     fetchPerso(url, {
         method: "GET"
     })
+    .then(teams => teams.json())
     .then(teams => {
         let div = document.getElementsByClassName("user-created-teams")[0];
     
