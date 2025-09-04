@@ -18,10 +18,9 @@ function fetchPerso(url, options = {}) {
             if (response.status == 403) {
                 localStorage.removeItem("authToken");
                 window.location.href = "/pages/login.html";
-                throw new Error("Não autorizado");
-            } else {
-                
-            }
+
+                return;
+            }            
             
             return response; // <-- devolve o Response inteiro
         })
