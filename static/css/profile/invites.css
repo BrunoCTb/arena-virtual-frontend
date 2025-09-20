@@ -9,7 +9,26 @@ main {
     margin: 4%;
 }
 
-.invites-menu-select {
+/* INVITE TYPE MENU */
+.invite-type-menu-select {
+    /* background-color: red; */
+    width: 30%;
+    /* height: ; */
+    display: flex;
+    gap: 10px   ;
+    padding: 10px 0;
+}
+
+.invite-type-menu-select span {
+    background-color: #23c923;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* --------------- */
+
+
+.invites-menu-select, .tournament-invites-menu-select {
     background-color: #e0e0e0cf;
     display: flex;
     justify-content: space-between;
@@ -20,28 +39,48 @@ main {
     padding: 5px
 }
 
-.invites-menu-select span {
+.invites-menu-select span, .tournament-invites-menu-select span {
     width: 50%;
     text-align: center;
     padding: 10px;
 }
 
-.invites-menu-select span.active {
+.invites-menu-select span.active, .tournament-invites-menu-select span.active {
     background-color: #fff;
 }
 
-
 /* DEFAULT */
-.all-invites > div {
+
+/* --- main tabs --- */
+.general-invites, .tournament-invites {
     display: none;
 }
 
-.all-invites > div.active {
+.invites-area > .m-active{
+    display: block;
+}
+
+.invite-type-menu-select span:not(.active) {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.invite-type-menu-select span.active {
+  background: #000;  /* Azul */
+  color: white;
+  font-weight: bold;
+}
+
+/* --- sub tabs --- */
+.all-general-invites > div, .all-tournament-invites > div{
+    display: none;
+}
+
+.all-general-invites > div.active, .all-tournament-invites > div.active {
     display: flex !important;
     flex-direction: column;
     gap: 10px;
 }
-/* --------------- */
 
 
 .sent-invite, .received-invite{

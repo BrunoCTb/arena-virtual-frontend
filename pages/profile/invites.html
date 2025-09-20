@@ -4,34 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/components/css/header.css">
-	<link rel="stylesheet" href="/components/css/footer.css">
-	<link rel="stylesheet" href="/static/css/profile/invites.css">
+    <link rel="stylesheet" href="/components/css/footer.css">
+    <link rel="stylesheet" href="/static/css/profile/invites.css">
     <title>Convites - times</title>
 </head>
 <body>
     <div id="header"></div>
-    
+
     <main>
         <div class="invites-area">
             <h1>Convites</h1>
 
-            <div class="invites-menu-select">
-                <span class="active" data-target="received-invitations">Recebidos</span>
-                <span data-target="sent-invitations">Enviados</span>
+            <!-- MENU PRINCIPAL -->
+            <div class="invite-type-menu-select">
+                <span class="active">Geral</span>
+                <span>Torneios</span>
             </div>
 
-
-            <div class="all-invites">
-                <div class="received-invitations active">
-                    <!-- ... -->
-                    
-                    <span id="not-found-received-invitations"></span>
+            <!-- GERAL -->
+            <div class="general-invites m-active">
+                <div class="invites-menu-select">
+                    <span class="active" data-target="received-invitations">Recebidos (geral)</span>
+                    <span data-target="sent-invitations">Enviados (geral)</span>
                 </div>
 
-                <div class="sent-invitations">
-                    <!-- ... -->
+                <div class="all-general-invites">
+                    <div class="received-invitations active">
+                        <!-- Conteúdo -->
+                        <span id="not-found-received-invitations"></span>
+                    </div>
 
-                    <span id="not-found-sent-invitations"></span>
+                    <div class="sent-invitations">
+                        <!-- Conteúdo -->
+                        <span id="not-found-sent-invitations"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOURNAMENT -->
+            <div class="tournament-invites">
+                <div class="tournament-invites-menu-select">
+                    <span class="active" data-target="received-tournament-invitations">Recebidos (campeonatos)</span>
+                    <span data-target="sent-tournament-invitations">Enviados (campeonatos)</span>
+                </div>
+
+                <div class="all-tournament-invites">
+                    <div class="received-tournament-invitations active">
+                        <!-- Conteúdo -->
+                        <span id="not-found-received-tournament-invitations"></span>
+                    </div>
+
+                    <div class="sent-tournament-invitations">
+                        <!-- Conteúdo -->
+                        <span id="not-found-sent-tournament-invitations"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +67,7 @@
 
     <script src="/static/js/api/auth.js"></script>
     <script src="/static/js/api/invite.js"></script>
-	<script src="/components/js/header.js"></script>
-	<script src="/components/js/footer.js"></script>
+    <script src="/components/js/header.js"></script>
+    <script src="/components/js/footer.js"></script>
 </body>
 </html>
