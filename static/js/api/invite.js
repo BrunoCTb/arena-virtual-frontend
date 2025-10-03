@@ -170,76 +170,173 @@ function setupSubTabs(menuSelector, sectionSelector) {
     });
 }
 
+const tournamentInvitesMap = new Map();
+
 function setTournamentInvites() {
-	url = `http://localhost:8080/user/tournament/invites`
-	// url = `http://localhost:8080/team/all`
+    const url = `http://localhost:8080/user/tournament/invites`;
 
-	fetchPerso(url, {
-		method: "GET"
-	})
-		.then(data => data.json())
-		.then(data => {
-			for (let i of data) {
-				sentDiv = document.getElementsByClassName("sent-tournament-invitations")[0];
-				receivedDiv = document.getElementsByClassName("received-tournament-invitations")[0];
+    fetchPerso(url, { method: "GET" })
+        .then(res => res.json())
+        .then(data => {
+            const sentDiv = document.querySelector(".sent-tournament-invitations");
+            const receivedDiv = document.querySelector(".received-tournament-invitations");
 
-				if (i.isSent) {
-					
-					console.log(i.tournamentInvite.senderType == "TOURNAMENT");
-					
-					if (i.tournamentInvite.senderType == "TOURNAMENT") {
-						jsonData = i.tournamentInvite;
-						subSentDiv = ` <div class="sent-tournament-data">
-										<span>Enviado para o time <a href="/pages/team-info.html?teamId=${jsonData.team.id}">${jsonData.team.name}</a></span>
-										<span>Do campeonato <a href="/pages/tournament/tournament-info.html?id=${jsonData.tournament.id}">${jsonData.tournament.title}</a></span>
-									</div>`;
+            // limpa conteúdo antigo
+            sentDiv.innerHTML = "";
+            receivedDiv.innerHTML = "";
 
-					} else if (i.tournamentInvite.senderType == "TEAM") {
-						jsonData = i.tournamentInvite;
-						subSentDiv = ` <div class="sent-tournament-data">
-										<span>Enviado para o campeonato <a href="/pages/tournament/tournament-info.html?id=${jsonData.tournament.id}">${jsonData.tournament.title}</a></span>
-										<span>Do time <a href="/pages/team-info.html?teamId=${jsonData.team.id}">${jsonData.team.name}</a></span>
-									</div>`;
-					}
+            data.forEach(inviteWrapper => {
+                const invite = inviteWrapper.tournamentInvite;
+                const id = invite.id; 
 
-					html = `
-					<div class="sent-tournament-invite">
-						${subSentDiv}
-						<button>Cancelar envio</button>
-					</div>`;
+                // salva cada invite no map em memoria
+                tournamentInvitesMap.set(id, invite);
 
-					sentDiv.innerHTML += html;
-				} else {
-					if (i.tournamentInvite.senderType == "TOURNAMENT") {
-						jsonData = i.tournamentInvite;
-						subReceivedDiv = ` <div class="received-tournament-data">
-												<span>Recebido do campeonato <a href="/pages/tournament/tournament-info.html?id=${jsonData.tournament.id}">${jsonData.tournament.title}</a></span>
-												<span>Para o time <a href="/pages/team-info.html?teamId=${jsonData.team.id}">${jsonData.team.name}</a></span>
-											</div>`;
-						
-					} else if (i.tournamentInvite.senderType == "TEAM") {
-						jsonData = i.tournamentInvite;
-						subReceivedDiv = ` <div class="received-tour1nament-data">
-												<span>Recebido do time <a href="/pages/team-info.html?teamId=${jsonData.team.id}">${jsonData.team.name}</a></span>
-												<span>Para o campeonato<a href="/pages/tournament/tournament-info.html?id=${jsonData.tournament.id}">${jsonData.tournament.title}</a></span>
-											</div>`;
-					}
+                let html = "";
+                let container = null;
 
-					html = `
-					<div class="recived-tournament-invite">
-						<div>${subReceivedDiv}</div>
-						<button>Rejeitar</button>
-					</div>`;
+                if (inviteWrapper.isSent) {
+                    container = sentDiv;
 
-					receivedDiv.innerHTML += html;
-				}
-			}
-		})
-		.catch(e => {
-			console.log("e: " + e);
-		})
+                    if (invite.senderType === "TOURNAMENT") {
+                        // HTML do invite enviado pelo campeonato
+                        html = `
+                            <div class="sent-tournament-invite" data-id="${id}">
+								<div class="tournament-invite-type">
+									<h3>Solicitação enviada<h3>
+								</div>
+								<div class="sent-tournament-invite-date">
+									<span>enviado em</span>
+									<span>${invite.createdAt}</span>
+								</div>
+								<div class="sent-tournament-invite-data">
+									<div>
+										<span>De: Seu time </span>
+										<a href="/pages/team-info.html?teamId=${invite.team.id}">${invite.team.name}</a>
+									</div>
+									<div>
+										<span>Para o campeonato:</span>
+										<a href="/pages/tournament/tournament-info.html?id=${invite.tournament.id}">${invite.tournament.title}</a>
+									</div>
+								</div>
+								<div class="sent-tournament-invite-action">
+                                	<button class="tournament-invite-details-btn">Ver detalhes</button>
+								</div>
+                            </div>`;
+                    } else {
+                        // HTML do invite enviado pelo time
+                        html = `
+							<div class="sent-tournament-invite" data-id="${id}">
+								<div class="tournament-invite-type">
+									<h3>Convite enviado</h3>
+								</div>
+								<div class="sent-tournament-invite-date">
+									<span>Enviado em</span>
+									<span>${invite.createdAt}</span>
+								</div>
+								<div class="sent-tournament-invite-data">
+									<div>
+										<span>De: seu Campeonato</span>
+										<a href="/pages/tournament/tournament-info.html?id=${invite.tournament.id}">${invite.tournament.title}</a>
+									</div>
+									<div>
+										<span>Para o time:</span>
+										<a href="/pages/team-info.html?teamId=${invite.team.id}">${invite.team.name}</a>
+									</div>
+								</div>
+								<div class="sent-tournament-invite-action">
+									<button class="tournament-invite-details-btn">Ver detalhes</button>
+								</div>
+							</div>`;
+                    }
+
+                } else {
+                    container = receivedDiv;
+
+                    if (invite.senderType === "TOURNAMENT") {
+                        // HTML do invite recebido do campeonato
+                        html = `
+                            <div class="received-tournament-invite" data-id="${id}">
+								<div class="tournament-invite-type">
+									<h3>Solicitação recebida</h3>
+								</div>
+								<div class="received-tournament-invite-date">
+									<span>Recebido em</span>
+									<span>${invite.createdAt}</span>
+								</div>
+								<div class="received-tournament-invite-data">
+									<div>
+										<span>De: Time </span>
+										<a href="/pages/team-info.html?teamId=${invite.team.id}">${invite.team.name}</a>
+									</div>
+									<div>
+										<span>Para: seu campeonato:</span>
+										<a href="/pages/tournament/tournament-info.html?id=${invite.tournament.id}">${invite.tournament.title}</a>
+									</div>
+								</div>
+								<div class="received-tournament-invite-action">
+									<button class="tournament-invite-details-btn">Ver detalhes</button>
+								</div>
+							</div>`;
+                    } else {
+                        // HTML do invite recebido do time
+                        html = `
+							<div class="received-tournament-invite" data-id="${id}">
+								<div class="tournament-invite-type">
+									<h3>Convite recebido</h3>
+								</div>
+								<div class="received-tournament-invite-date">
+									<span>Recebido em</span>
+									<span>${invite.createdAt}</span>
+								</div>
+								<div class="received-tournament-invite-data">
+									<div>
+										<span>De: Campeonato </span>
+										<a href="/pages/tournament/tournament-info.html?id=${invite.tournament.id}">${invite.tournament.title}</a>
+									</div>
+									<div>
+										<span>Para seu time:</span>
+										<a href="/pages/team-info.html?teamId=${invite.team.id}">${invite.team.name}</a>
+									</div>
+								</div>
+								<div class="received-tournament-invite-action">
+									<button class="tournament-invite-details-btn">Ver detalhes</button>
+								</div>
+							</div>`;
+                    }
+                }
+
+                container.innerHTML += html;
+            });
+
+            setupInviteClick();
+        })
+        .catch(e => console.log(e));
 }
 
+
+// setar os event click para cada tournament invite
+function setupInviteClick() {
+    document.querySelectorAll(".tournament-invite-details-btn").forEach(btn => {
+        btn.addEventListener("click", e => {
+			// nao deixar click externo ao abrir o card
+            e.stopPropagation(); 
+
+            // sobe até a div do convite (pai) para pegar o data-id
+            const parentDiv = btn.closest(".sent-tournament-invite, .received-tournament-invite");
+            const id = parentDiv.dataset.id;
+
+            const invite = tournamentInvitesMap.get(id);
+
+            openInviteCard(invite);
+        });
+    });
+}
+
+
+function openInviteCard(invite) {
+    console.log("Abrir card para: ", invite);
+}
 
 async function cancelInvite(inviteId) {
 	bodyData = JSON.stringify({

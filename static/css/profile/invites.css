@@ -148,3 +148,40 @@ main {
 .received-accept-invite:hover {
     background-color: #23c923ac !important;
 }
+
+/* ----- Tournament invites  ----- */
+.received-tournament-invite, .sent-tournament-invite {
+    background-color: #ebeaeacf;
+    width: calc(50% - 40px);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.received-tournament-invite h3, .sent-tournament-invite h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.sent-tournament-invite-date, .received-tournament-invite-date {
+    color: #1f1f1f76;
+}
+
+.sent-tournament-invite-data, .received-tournament-invite-data {
+    color: #1f1f1f76;
+}
+
+.sent-tournament-invite-data a, .received-tournament-invite-data a {
+    color: #000;
+}
+.sent-tournament-invite-data a:hover, .received-tournament-invite-data a:hover {
+    text-decoration: none;
+}
+
+.tournament-invite-details-btn {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+}
