@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/components/css/header.css">
     <link rel="stylesheet" href="/components/css/footer.css">
     <link rel="stylesheet" href="/static/css/profile/invites.css">
+    <link rel="stylesheet" href="/static/css/profile/invite-card.css">
     <title>Convites - times</title>
 </head>
 <body>
@@ -60,13 +61,33 @@
                     </div>
                 </div>
             </div>
+
+            <div class="tournament-invite-overlay" id="inviteOverlay">
+                <div class="card-received-tournament-invite">
+                    <div class="card-received-tournament-invite-title" data-field="title"></div>
+                    <div class="card-received-tournament-invite-rel" data-field="rel"></div>
+                    <div class="card-received-tournament-invite-description" data-field="description"></div>
+                    <div class="card-received-tournament-invite-date" data-field="date"></div>
+                    <div class="card-received-tournament-invite-actions" data-field="actions"></div>
+                    <button class="close-card-btn">x</button>
+                </div>
+
+                <div class="card-sent-tournament-invite">
+                    <div class="card-sent-tournament-invite-title" data-field="title"></div>
+                    <div class="card-sent-tournament-invite-rel" data-field="rel"></div>
+                    <div class="card-sent-tournament-invite-description" data-field="description"></div>
+                    <div class="card-sent-tournament-invite-date" data-field="date"></div>
+                    <div class="card-sent-tournament-invite-actions" data-field="actions"></div>
+                    <button class="close-card-btn">x</button>
+                </div>
+            </div>
         </div>
     </main>
 
     <div id="footer"></div>
 
     <script src="/static/js/api/auth.js"></script>
-    <script src="/static/js/api/invite.js"></script>
+    <script type="module" src="/static/js/api/invite.js"></script>
     <script src="/components/js/header.js"></script>
     <script src="/components/js/footer.js"></script>
 </body>

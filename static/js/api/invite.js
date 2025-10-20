@@ -15,7 +15,7 @@ function setReceivedInvite(username) {
 			}
 
 			for (let invite of data) {
-				let inviteHTML = let = `
+				let inviteHTML = `
 			<div class="received-invite"S>
 				<div class="received-invite-content">
 					<div class="received-invite-data">
@@ -70,7 +70,7 @@ function setSentInvite(username) {
 			}
 
 			for (let invite of data) {
-				let inviteHTML = let = `
+				let inviteHTML = `
 			<div class="sent-invite">
 				<div class="sent-invite-content">
 					<div class="sent-invite-data">
@@ -102,7 +102,7 @@ function setSentInvite(username) {
 }
 
 function setTeamInvites() {
-	url = "http://localhost:8080/user/auth/get"
+	let url = "http://localhost:8080/user/auth/get"
 
 	fetchPerso(url, {
 		method: "GET"
@@ -184,13 +184,16 @@ function setTournamentInvites() {
             // limpa conteúdo antigo
             sentDiv.innerHTML = "";
             receivedDiv.innerHTML = "";
-
+			
             data.forEach(inviteWrapper => {
                 const invite = inviteWrapper.tournamentInvite;
                 const id = invite.id; 
 
-                // salva cada invite no map em memoria
-                tournamentInvitesMap.set(id, invite);
+                // salva cada invite no map em memoria e tambem facilita saber se o user que envia ou recebe
+                tournamentInvitesMap.set(id, {
+					invite,
+					isSent: inviteWrapper.isSent
+				});
 
                 let html = "";
                 let container = null;
@@ -335,7 +338,7 @@ function setupInviteClick() {
 
 
 function openInviteCard(invite) {
-    console.log("Abrir card para: ", invite);
+	openDinTournamentInviteCard(invite)
 }
 
 async function cancelInvite(inviteId) {
@@ -394,4 +397,7 @@ selectInviteMainTab();
 // chamar funcao para as subtabs dos team invites e tournament invites
 setupSubTabs('.invites-menu-select', '.all-general-invites');
 setupSubTabs('.tournament-invites-menu-select', '.all-tournament-invites');
+
+
+import { openDinTournamentInviteCard } from "./invite/tournamentInviteUI.js";
 
