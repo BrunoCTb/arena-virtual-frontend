@@ -1,3 +1,6 @@
+import { openDinTournamentInviteCard } from "./invite/tournament-invite-ui.js";
+
+
 // MOSTRAR OS CONVITES RECEBIDOS NO HTML
 function setReceivedInvite(username) {
 	let receivedUrl = `http://localhost:8080/${username}/invites/received`;
@@ -123,6 +126,7 @@ function selectInviteMainTab() {
 		const mainTabs = document.querySelectorAll(".invite-type-menu-select span");
 		const generalInvites = document.querySelector(".general-invites");
 		const tournamentInvites = document.querySelector(".tournament-invites");
+		const searchInvites = document.querySelector(".search-invites");
 
 		mainTabs.forEach(tab => {
 			tab.addEventListener("click", () => {
@@ -131,18 +135,33 @@ function selectInviteMainTab() {
 				tab.classList.add("active");
 
 				// mostrar/ocultar +seção correta
+				console.log(tab.textContent);
+				
+
 				if (tab.textContent.trim() === "Geral") {
 					generalInvites.classList.add("m-active");
 					tournamentInvites.classList.remove("m-active");
+					searchInvites.classList.remove("m-active");
 
 					generalInvites.style.display = "block";
 					tournamentInvites.style.display = "none";
-				} else {
+					searchInvites.style.display = "none";
+				} else if(tab.textContent.trim() === "Torneios") {
 					tournamentInvites.classList.add("m-active");
 					generalInvites.classList.remove("m-active");
+					searchInvites.classList.remove("m-active");
 
 					generalInvites.style.display = "none";
+					searchInvites.style.display = "none";
 					tournamentInvites.style.display = "block";
+				} else {
+					searchInvites.classList.add("m-active");
+					generalInvites.classList.remove("m-active");
+					tournamentInvites.classList.remove("m-active");
+
+					tournamentInvites.style.display = "none";
+					generalInvites.style.display = "none";
+					searchInvites.style.display = "block";
 				}
 			});
 		});
@@ -399,5 +418,4 @@ setupSubTabs('.invites-menu-select', '.all-general-invites');
 setupSubTabs('.tournament-invites-menu-select', '.all-tournament-invites');
 
 
-import { openDinTournamentInviteCard } from "./invite/tournamentInviteUI.js";
 

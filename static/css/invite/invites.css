@@ -1,3 +1,7 @@
+@import url(invite-card.css);
+@import url(invite-search.css);
+
+
 main {
     font-family: 'Fredoka';
     display: flex;
@@ -52,7 +56,7 @@ main {
 /* DEFAULT */
 
 /* --- main tabs --- */
-.general-invites, .tournament-invites {
+.general-invites, .tournament-invites, .search-invites {
     display: none;
 }
 

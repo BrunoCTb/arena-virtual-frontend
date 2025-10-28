@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/components/css/header.css">
     <link rel="stylesheet" href="/components/css/footer.css">
-    <link rel="stylesheet" href="/static/css/profile/invites.css">
-    <link rel="stylesheet" href="/static/css/profile/invite-card.css">
+    <link rel="stylesheet" href="/static/css/invite/invites.css">
     <title>Convites - times</title>
 </head>
 <body>
@@ -20,6 +19,7 @@
             <div class="invite-type-menu-select">
                 <span class="active">Geral</span>
                 <span>Torneios</span>
+                <span>Pesquisar</span>
             </div>
 
             <!-- GERAL -->
@@ -59,6 +59,39 @@
                         <!-- Conteúdo -->
                         <span id="not-found-sent-tournament-invitations"></span>
                     </div>
+                </div>
+            </div>
+
+            <!-- SEARCH ENTITY (player, team ou tournament) -->
+            <div class="search-invites">
+                <div class="search-invites-input-area">
+                    <div class="search-invites-input-bar">
+                        <input type="text">
+                        <button>pesquisar</button>
+                    </div>
+
+                    <div class="search-invites-input-type">
+                        <span class="search-active">Player</span>
+                        <span>Time</span>
+                        <span>Torneio</span>
+                    </div>
+                </div>
+
+                <div class="search-invites-result">
+                    <div class="search-invites-result-found">
+                        <div class="search-invites-result-found-title">
+                            <!-- add/remove com js -->
+                        </div>
+                        
+                        <div class="search-invites-result-found-actions">
+                            <!-- add/remove com js -->
+                        </div>
+                    </div>
+
+                    <div class="search-invites-result-found">
+                        <span>Nenhum dado encontrado</span>
+                    </div>
+                    
                 </div>
             </div>
 

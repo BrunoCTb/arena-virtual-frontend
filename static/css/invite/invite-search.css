@@ -1,0 +1,38 @@
+.search-invites {
+    background-color: yellow;
+    width: 100%;
+}
+
+.search-invites-input-area {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.search-invites-input-type {
+  background-color: blue;
+  height: auto;
+  display: flex;
+  gap: 8px; 
+  padding: 10px;
+  margin-top: 10px; 
+}
+
+.search-invites-input-type span {
+  background-color: rebeccapurple;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-invites-input-type span.search-active {
+    background-color: green;
+}
+
+.search-invites-result {
+    background-color: aqua;
+    height: 200px;
+    margin-top: 20px;
+}
+
